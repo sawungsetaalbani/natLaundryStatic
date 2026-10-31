@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riwayat Pesanan - NAT Laundry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="beranda.css">
+  <link rel="stylesheet" href="pesanan.css">
+</head>
+<body>
+  <header class="navbar">
+    <span class="logo">NAT Laundry</span>
+    <nav>
+      <a href="beranda.html">Beranda</a>
+      <a href="layanan.html">Layanan</a>
+      <a href="pesanan.html" class="nav-active">Pesanan</a>
+      <span class="user">👤 Raditya Arya Wiguna</span>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="title-row">
+      <a href="pesanan.html" class="back" aria-label="Kembali">&lsaquo;</a>
+      <h1>Riwayat Pesanan</h1>
+    </div>
+
+    <form class="search" action="#" method="get">
+      <input type="search" name="q" placeholder="Cari data riwayat pesanan disini">
+      <button type="submit" class="btn pdf">Ekspor PDF</button>
+    </form>
+
+    <form class="filter" action="#" method="get">
+      <label for="bulan">Filter berdasarkan bulan:</label>
+      <select id="bulan" name="bulan"><option selected>September 2026</option><option>Agustus 2026</option><option>Juli 2026</option></select>
+    </form>
+
+    <div class="meta">
+      <span class="total-data">TOTAL DATA : 12 DATA</span>
+      <div class="pager">
+        <span>Halaman <b>1</b> dari <b>3</b></span>
+        <label for="per">Item per halaman</label>
+        <select id="per" name="per"><option selected>6</option><option>12</option><option>24</option></select>
+        <a href="#" aria-label="Sebelumnya">&lsaquo;</a>
+        <a href="#" aria-label="Selanjutnya">&rsaquo;</a>
+      </div>
+    </div>
+
+    <section class="history">
+        <article class="order">
+          <div class="head">
+            <div><div class="name">Raditya Arya Wiguna</div><div class="sub">Pemesanan : 02/09/2026 10:54</div></div>
+            <a href="#" class="badge">Detail</a>
+          </div>
+          <div class="line"><span class="lunas">LUNAS</span><span>CUCI KILOAN - REGULAR 3X24 JAM</span></div>
+          <div class="detail"><span>Layanan</span><span>Cuci Kering Setrika</span><span>Berat</span><span>3 kg</span></div>
+          <div class="total"><span>Total Harga</span><b>Rp. 21.000</b></div>
+        </article>
+        <article class="order">
+          <div class="head">
+            <div><div class="name">Raditya Arya Wiguna</div><div class="sub">Pemesanan : 02/09/2026 15:02</div></div>
+            <a href="#" class="badge">Detail</a>
+          </div>
+          <div class="line"><span class="lunas">LUNAS</span><span>CUCI SATUAN - REGULAR 3X24 JAM</span></div>
+          <div class="detail"><span>Layanan</span><span>Bedcover L</span><span>Jumlah</span><span>1 pcs</span></div>
+          <div class="total"><span>Total Harga</span><b>Rp. 29.000</b></div>
+        </article>
+        <article class="order">
+          <div class="head">
+            <div><div class="name">Raditya Arya Wiguna</div><div class="sub">Pemesanan : 02/09/2026 10:54</div></div>
+            <a href="#" class="badge">Detail</a>
+          </div>
+          <div class="line"><span class="lunas">LUNAS</span><span>CUCI KILOAN - REGULAR 3X24 JAM</span></div>
+          <div class="detail"><span>Layanan</span><span>Cuci Kering Setrika</span><span>Berat</span><span>4 kg</span></div>
+          <div class="total"><span>Total Harga</span><b>Rp. 28.000</b></div>
+        </article>
+        <article class="order">
+          <div class="head">
+            <div><div class="name">Raditya Arya Wiguna</div><div class="sub">Pemesanan : 02/09/2026 15:02</div></div>
+            <a href="#" class="badge">Detail</a>
+          </div>
+          <div class="line"><span class="lunas">LUNAS</span><span>CUCI SATUAN - REGULAR 3X24 JAM</span></div>
+          <div class="detail"><span>Layanan</span><span>Bedcover L</span><span>Jumlah</span><span>1 pcs</span></div>
+          <div class="total"><span>Total Harga</span><b>Rp. 29.000</b></div>
+        </article>
+        <article class="order">
+          <div class="head">
+            <div><div class="name">Raditya Arya Wiguna</div><div class="sub">Pemesanan : 02/09/2026 15:02</div></div>
+            <a href="#" class="badge">Detail</a>
+          </div>
+          <div class="line"><span class="lunas">LUNAS</span><span>CUCI SATUAN - REGULAR 3X24 JAM</span></div>
+          <div class="detail"><span>Layanan</span><span>Bedcover L</span><span>Jumlah</span><span>1 pcs</span></div>
+          <div class="total"><span>Total Harga</span><b>Rp. 29.000</b></div>
+        </article>
+    </section>
+  </main>
+
+  <footer>
+    <b>NAT Laundry | <i>Pakaian Wangi ya NAT Laundry Solusinya</i></b><br>
+    Dikembangkan oleh Tim Capstone 2026
+  </footer>
+</body>
+</html>

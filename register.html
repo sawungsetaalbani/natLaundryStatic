@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrasi Akun - NAT Laundry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper wide">
+    <a href="login.html" class="back" aria-label="Kembali">&#8249;</a>
+    <div class="header">
+      <div>
+        <small>Lengkapi data,</small>
+        <h1>Registrasi Akun</h1>
+      </div>
+    </div>
+
+    <form class="card" action="#" method="post">
+      <div class="grid">
+        <div class="group">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+        </div>
+        <div class="group">
+          <label for="telp">Nomor Telepon</label>
+          <input type="tel" id="telp" name="telp" placeholder="Masukkan nomor telepon" required>
+        </div>
+
+        <div class="group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Masukkan username" required>
+        </div>
+        <div class="group">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+            <span class="toggle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="group">
+          <label for="alamat">Alamat</label>
+          <textarea id="alamat" name="alamat" placeholder="Masukkan alamat" required></textarea>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn">Daftar Akun</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tambah Layanan - NAT Laundry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">NAT Laundry</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="data-pesanan.html">Data Pesanan</a>
+      <a href="data-pelanggan.html">Data Pelanggan</a>
+      <a href="data-layanan.html" class="active">Data Layanan</a>
+      <a href="data-jenis-layanan.html">Jenis Layanan</a>
+      <a href="laporan-transaksi.html">Laporan Transaksi</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <div class="topbar">
+      <h1><b>Tambah</b> Layanan</h1>
+      <div class="admin"><span class="av">👤</span><div><b>Nama Admin</b>Administrator</div></div>
+    </div>
+
+    <a href="data-layanan.html" class="back" aria-label="Kembali">&lsaquo;</a>
+    <form action="#" method="post">
+      <div class="card form-card">
+        <div class="fgrid">
+          <div><label for="jenis">Jenis Layanan</label>
+            <select id="jenis" name="jenis" class="fld" required><option value="">Pilih jenis layanan</option><option>Cuci Kiloan</option><option>Cuci Satuan</option><option>Cuci Satuan Manual</option></select></div>
+          <div><label for="tipe">Tipe Laundry</label>
+            <select id="tipe" name="tipe" class="fld" required><option selected>REGULAR 3X24 JAM</option><option>EXPRESS 1X24 JAM</option></select></div>
+          <div><label for="nama">Nama Layanan</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama layanan" value="" required></div>
+          <div class="two-in">
+            <div><label for="harga">Harga</label>
+              <div class="phone"><span class="pre">Rp.</span><input type="number" id="harga" name="harga" min="0" placeholder="Harga layanan" value="" required></div></div>
+            <div><label for="satuan">Satuan</label>
+              <select id="satuan" name="satuan" class="fld"><option selected>kg</option><option>pcs</option></select></div>
+          </div>
+        </div>
+      </div>
+      <div class="below"><button type="submit" class="btn lg" style="background:var(--blue);color:#fff;font-weight:600">Simpan Data</button></div>
+    </form>
+  </main>
+
+</body>
+</html>

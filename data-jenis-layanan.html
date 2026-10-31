@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jenis Layanan - NAT Laundry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">NAT Laundry</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="data-pesanan.html">Data Pesanan</a>
+      <a href="data-pelanggan.html">Data Pelanggan</a>
+      <a href="data-layanan.html">Data Layanan</a>
+      <a href="data-jenis-layanan.html" class="active">Jenis Layanan</a>
+      <a href="laporan-transaksi.html">Laporan Transaksi</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <div class="topbar">
+      <h1><b>Jenis</b> Layanan</h1>
+      <div class="admin"><span class="av">👤</span><div><b>Nama Admin</b>Administrator</div></div>
+    </div>
+
+    <div class="split">
+      <form class="add-card" action="#" method="post">
+        <h2>Tambah Layanan</h2>
+        <label for="jenis">Jenis Layanan</label>
+        <input type="text" id="jenis" name="jenis" placeholder="Masukkan jenis layanan laundry" required>
+        <div class="btn-row"><button type="submit" class="btn">+ &nbsp;Simpan Data</button></div>
+      </form>
+
+      <div>
+        <form class="search" action="#" method="get"><input type="search" name="q" placeholder="Cari jenis layanan disini"></form>
+        <section class="card table-wrap">
+          <table class="light-th">
+            <tr><th class="c">No.</th><th class="c">Aksi</th><th class="c">Jenis Layanan</th></tr>
+          <tr>
+            <td class="c">1.</td>
+            <td><div class="acts"><a href="#" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
+            <td class="c">Cuci Kiloan</td>
+          </tr>
+          <tr>
+            <td class="c">2.</td>
+            <td><div class="acts"><a href="#" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
+            <td class="c">Cuci Satuan</td>
+          </tr>
+          <tr>
+            <td class="c">3.</td>
+            <td><div class="acts"><a href="#" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
+            <td class="c">Cuci Satuan Manual</td>
+          </tr>
+          </table>
+        </section>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

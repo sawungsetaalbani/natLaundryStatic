@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Pesanan - NAT Laundry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">NAT Laundry</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="data-pesanan.html" class="active">Data Pesanan</a>
+      <a href="data-pelanggan.html">Data Pelanggan</a>
+      <a href="data-layanan.html">Data Layanan</a>
+      <a href="data-jenis-layanan.html">Jenis Layanan</a>
+      <a href="laporan-transaksi.html">Laporan Transaksi</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <div class="topbar">
+      <h1><b>Data</b> Pesanan</h1>
+      <div class="admin"><span class="av">👤</span><div><b>Nama Admin</b>Administrator</div></div>
+    </div>
+
+    <div class="toolbar">
+      <a href="tambah-pesanan.html" class="btn lg" style="background:var(--blue);color:#fff;font-weight:600">+ Tambah Pesanan</a>
+      <form class="search" action="#" method="get"><input type="search" name="q" placeholder="Cari berdasarkan nama atau kode layanan"></form>
+    </div>
+
+    <section class="card table-wrap">
+      <table>
+        <tr><th class="c">No.</th><th class="c">Aksi</th><th class="c">Kode Pesanan</th><th>Pemesan</th><th>Layanan</th><th class="c">Berat / Jumlah</th><th class="c">Total</th></tr>
+          <tr>
+            <td class="c">1</td>
+            <td><div class="acts"><a href="ubah-pesanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button><a href="#" class="ib green" title="Detail">☰</a></div></td>
+            <td class="c">PS001</td>
+            <td>Raditya Arya Wiguna<div class="sub">02/09/2026 10:54</div></td>
+            <td>Cuci Kering - Regular 3x24 jam<div class="st red">DIPROSES | BELUM BAYAR</div></td>
+            <td class="c">3 kg</td>
+            <td class="c">Rp. 21.000</td>
+          </tr>
+          <tr>
+            <td class="c">2</td>
+            <td><div class="acts"><a href="ubah-pesanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button><a href="#" class="ib green" title="Detail">☰</a></div></td>
+            <td class="c">PS002</td>
+            <td>Dafa<div class="sub">02/09/2026 10:56</div></td>
+            <td>Setrika - Regular 3x24 jam<div class="st">DIPROSES | LUNAS</div></td>
+            <td class="c">1 pcs</td>
+            <td class="c">Rp. 20.000</td>
+          </tr>
+          <tr>
+            <td class="c">3</td>
+            <td><div class="acts"><a href="ubah-pesanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button><a href="#" class="ib green" title="Detail">☰</a></div></td>
+            <td class="c">PS003</td>
+            <td>Dwi Sri<div class="sub">02/09/2026 10:57</div></td>
+            <td>Cuci Kering - Regular 3x24 jam<div class="st red">DIPROSES | BELUM BAYAR</div></td>
+            <td class="c">2 kg</td>
+            <td class="c">Rp. 14.000</td>
+          </tr>
+          <tr>
+            <td class="c">4</td>
+            <td><div class="acts"><a href="ubah-pesanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button><a href="#" class="ib green" title="Detail">☰</a></div></td>
+            <td class="c">PS004</td>
+            <td>Wayan Rio<div class="sub">02/09/2026 11:02</div></td>
+            <td>Setrika - Regular 3x24 jam<div class="st">DIPROSES | LUNAS</div></td>
+            <td class="c">5 kg</td>
+            <td class="c">Rp. 20.000</td>
+          </tr>
+          <tr>
+            <td class="c">5</td>
+            <td><div class="acts"><a href="ubah-pesanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button><a href="#" class="ib green" title="Detail">☰</a></div></td>
+            <td class="c">PS005</td>
+            <td>Gotong Bela<div class="sub">02/09/2026 11:05</div></td>
+            <td>Cuci Kering - Regular 3x24 jam<div class="st red">DIPROSES | BELUM BAYAR</div></td>
+            <td class="c">2.1 kg</td>
+            <td class="c">Rp. 15.000</td>
+          </tr>
+          <tr>
+            <td class="c">6</td>
+            <td><div class="acts"><a href="ubah-pesanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button><a href="#" class="ib green" title="Detail">☰</a></div></td>
+            <td class="c">PS006</td>
+            <td>Rohan Yohan<div class="sub">02/09/2026 11:09</div></td>
+            <td>Cuci Kering - Regular 3x24 jam<div class="st">DIPROSES | LUNAS</div></td>
+            <td class="c">4.33 kg</td>
+            <td class="c">Rp. 22.000</td>
+          </tr>
+          <tr>
+            <td class="c">7</td>
+            <td><div class="acts"><a href="ubah-pesanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button><a href="#" class="ib green" title="Detail">☰</a></div></td>
+            <td class="c">PS007</td>
+            <td>Dimitardio<div class="sub">02/09/2026 11:12</div></td>
+            <td>Cuci Kering - Regular 3x24 jam<div class="st red">DIPROSES | BELUM BAYAR</div></td>
+            <td class="c">3.5 kg</td>
+            <td class="c">Rp. 22.000</td>
+          </tr>
+      </table>
+    </section>
+  </main>
+
+</body>
+</html>

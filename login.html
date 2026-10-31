@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - NAT Laundry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div>
+        <small>Selamat datang,</small>
+        <h1>Silahkan Login</h1>
+      </div>
+      <span class="brand">NAT Laundry</span>
+    </div>
+
+    <form class="card login" action="#" method="post">
+      <div class="group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Masukkan username anda disini" required>
+      </div>
+
+      <div class="group">
+        <label for="password">Password</label>
+        <div class="input-wrap">
+          <input type="password" id="password" name="password" placeholder="Masukkan password anda" required>
+          <span class="toggle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+      <p class="foot">Belum memiliki akun? <a href="register.html">Register</a></p>
+    </form>
+  </div>
+</body>
+</html>

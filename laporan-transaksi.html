@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Transaksi - NAT Laundry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">NAT Laundry</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="data-pesanan.html">Data Pesanan</a>
+      <a href="data-pelanggan.html">Data Pelanggan</a>
+      <a href="data-layanan.html">Data Layanan</a>
+      <a href="jenis-layanan.html">Jenis Layanan</a>
+      <a href="laporan-transaksi.html" class="active">Laporan Transaksi</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <div class="topbar">
+      <h1><b>Laporan</b> Transaksi</h1>
+      <div class="admin"><span class="av">👤</span><div><b>Nama Admin</b>Administrator</div></div>
+    </div>
+
+    <section class="report-top">
+      <form class="rcard" action="#" method="get">
+        <div class="flt-title">Filtering Data</div>
+        <div class="flt-row">
+          <input type="date" name="tanggal" aria-label="Kustom Tanggal" value="2026-09-10">
+          <a href="laporan-transaksi.html" class="reset">Reset filter &nbsp;✕</a>
+        </div>
+        <div class="info">Data Filter : <b>10 - 12 September 2026</b></div>
+      </form>
+      <div class="rcard center">
+        <div class="lbl">Total Pendapatan</div>
+        <div class="big">Rp. 120.000</div>
+        <div class="small">10 - 12 September 2026</div>
+      </div>
+      <div class="rcard center">
+        <div class="lbl">Total Data</div>
+        <div class="big">4 transaksi</div>
+      </div>
+      <a href="#" class="btn export">⬇ &nbsp;Export PDF</a>
+    </section>
+
+    <div class="bar-row">
+      <form class="search" action="#" method="get"><input type="search" name="q" placeholder="Cari berdasarkan pemesan, kode dan layanan"></form>
+      <div class="pager">
+        <span>Halaman <b>1</b> dari <b>3</b></span>
+        <label for="per" style="margin:0;font-weight:400">Item per halaman</label>
+        <select id="per" name="per"><option selected>5</option><option>10</option><option>20</option></select>
+        <a href="#" aria-label="Sebelumnya">&lsaquo;</a>
+        <a href="#" aria-label="Selanjutnya">&rsaquo;</a>
+      </div>
+    </div>
+
+    <section class="card table-wrap">
+      <table class="light-th">
+        <tr><th class="c">No.</th><th class="c">Kode Pesanan</th><th class="c">Pemesan</th><th class="c">Layanan</th><th class="c">Berat / Jumlah</th><th class="c">Total</th><th class="c">Pembayaran</th></tr>
+          <tr>
+            <td class="c">1.</td>
+            <td class="c">PS001</td>
+            <td class="c">Agung Abadi<div class="sub">10/09/2026 &nbsp;10.11</div></td>
+            <td class="c">Cuci Kiloan - Regular 3x24 jam<span class="ok-text">STATUS : SELESAI</span></td>
+            <td class="c">5 kg</td>
+            <td class="c">Rp. 36.000</td>
+            <td class="c"><span class="ok-text">LUNAS</span></td>
+          </tr>
+          <tr>
+            <td class="c">2.</td>
+            <td class="c">PS002</td>
+            <td class="c">Sulis<div class="sub">10/09/2026 &nbsp;10.11</div></td>
+            <td class="c">Cuci Kiloan - Regular 3x24 jam<span class="ok-text">STATUS : SELESAI</span></td>
+            <td class="c">2.1 kg</td>
+            <td class="c">Rp. 16.000</td>
+            <td class="c"><span class="ok-text">LUNAS</span></td>
+          </tr>
+          <tr>
+            <td class="c">3.</td>
+            <td class="c">PS003</td>
+            <td class="c">Dwi Sri<div class="sub">10/09/2026 &nbsp;10.11</div></td>
+            <td class="c">Cuci Manual - Regular 3x24 jam<span class="ok-text">STATUS : SELESAI</span></td>
+            <td class="c">4.23 kg</td>
+            <td class="c">Rp. 52.000</td>
+            <td class="c"><span class="ok-text">LUNAS</span></td>
+          </tr>
+          <tr>
+            <td class="c">4.</td>
+            <td class="c">PS006</td>
+            <td class="c">Sawung Seta<div class="sub">10/09/2026 &nbsp;10.11</div></td>
+            <td class="c">Cuci Manual - Regular 3x24 jam<span class="ok-text">STATUS : SELESAI</span></td>
+            <td class="c">3.5 kg</td>
+            <td class="c">Rp. 20.000</td>
+            <td class="c"><span class="ok-text">LUNAS</span></td>
+          </tr>
+      </table>
+    </section>
+  </main>
+
+</body>
+</html>
