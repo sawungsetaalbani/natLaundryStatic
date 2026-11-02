@@ -6,26 +6,41 @@
   <title>Dashboard Admin - NAT Laundry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
-
+  <!-- SIDEBAR -->
+  <input type="checkbox" id="toggle-sidebar" hidden>
   <aside class="sidebar">
-    <div class="logo">NAT Laundry</div>
+    <div class="logo"><b>NAT</b> Laundry</div>
+    <hr style="border: 1px dashed var(--sky); margin-bottom: 40px;">
     <nav>
-      <a href="dashboard.html" class="active">Dashboard</a>
-      <a href="data-pesanan.html">Data Pesanan</a>
-      <a href="data-pelanggan.html">Data Pelanggan</a>
-      <a href="data-layanan.html">Data Layanan</a>
-      <a href="data-jenis-layanan.html">Jenis Layanan</a>
-      <a href="laporan-transaksi.html">Laporan Transaksi</a>
+      <a href="dashboard.html" class="active"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+      <a href="data-pesanan.html"><i data-lucide="shopping-cart"></i>Data Pesanan</a>
+      <a href="data-pelanggan.html"><i data-lucide="users"></i>Data Pelanggan</a>
+      <a href="data-layanan.html"><i data-lucide="package"></i>Data Layanan</a>
+      <a href="data-jenis-layanan.html"><i data-lucide="layers"></i>Jenis Layanan</a>
+      <a href="laporan-transaksi.html"><i data-lucide="file-text"></i>Laporan Transaksi</a>
     </nav>
   </aside>
+  <label for="toggle-sidebar" class="overlay"></label>
 
   <main class="content">
     <div class="topbar">
-      <h1>Dashboard Pendapatan</h1>
-      <div class="admin"><span class="av">👤</span><div><b>Nama Admin</b>Administrator</div></div>
+      <label for="toggle-sidebar" class="menu-toggle" aria-label="Buka menu"><i data-lucide="menu"></i></label>
+      <h1><b>Dashboard</b> Pendapatan</h1>
+
+      <details class="admin">
+       <summary>
+          <i data-lucide="user-round"></i>
+          <div><b>Raditya Arya</b><small>Administrator</small></div>
+          <i data-lucide="chevron-down"></i>
+        </summary>
+        <div class="dropdown">
+          <p><b>Halo, Raditya Arya!</b>Administrator</p>
+          <a href="beranda.html" class="btn"><i data-lucide="log-out"></i>Logout</a>
+        </div>
+      </details>
     </div>
 
     <section class="stats">
@@ -46,7 +61,7 @@
           <span>Grafik Penjualan</span>
           <form class="right" action="#" method="get">
             <label for="periode">Periode</label>
-            <select id="periode" name="periode"><option selected>2026</option><option>2025</option></select>
+            <select id="periode" name="periode"><option selected>Bulan</option><option>Tahun</option><option>Hari</option></select>
           </form>
         </div>
         <div class="chart">
@@ -56,16 +71,22 @@
       </div>
 
       <div class="panel">
-        <div class="panel-head"><span>Daftar Pesanan</span><a href="#" class="btn">Lihat Semua</a></div>
+        <div class="panel-head"><span>Daftar Pesanan<small>DIPROSES</small></span><a href="data-pesanan.html" class="btn">Detail data</a></div>
         <table>
-          <tr><th>No</th><th>Pelanggan</th><th>Layanan</th><th>Status</th></tr>
-          <tr><td>1</td><td>Raditya Arya W.</td><td>Cuci Kering Setrika</td><td><span class="tag ok">Lunas</span></td></tr>
-          <tr><td>2</td><td>Dewi Lestari</td><td>Bedcover L</td><td><span class="tag ok">Lunas</span></td></tr>
-          <tr><td>3</td><td>Budi Santoso</td><td>Setrika Express</td><td><span class="tag no">Belum</span></td></tr>
+          <tr><th>No</th><th>No. Pesanan</th><th>Pemesan</th></tr>
+          <tr><td>1</td><td>PS001</td><td>Raditya Arya W.</td></tr>
+          <tr><td>2</td><td>PS002</td><td>Dewi Lestari</td></tr>
+          <tr><td>3</td><td>PS003</td><td>Budi Santoso</td></tr>
         </table>
       </div>
     </section>
   </main>
+
+  <!-- ICON LUCIDE -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 
 </body>
 </html>

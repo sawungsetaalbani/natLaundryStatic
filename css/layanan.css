@@ -1,0 +1,152 @@
+
+/* HALAMAN DAFTAR LAYANAN */
+.page-title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 400;
+    margin: 40px 0 36px;
+    letter-spacing: -1.5px;
+}
+.page-title b { font-weight: 700; }
+.nav-active { font-weight: 700; }
+
+/* KATEGORI */
+.category { margin-bottom: 48px; }
+.cat-head {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 22px;
+}
+.cat-head .ic { font-size: 22px; line-height: 1; margin-top: 2px; }
+.cat-head img { width: 48px; height: 48px; object-fit: contain; flex-shrink: 0; }
+.cat-head h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.8px; }
+.cat-head p { font-size: 13px; margin-top: 4px; max-width: 500px; line-height: 1.6; color: var(--sky); }
+
+/* SLIDER */
+.row { display: flex; align-items: center; gap: 16px; }
+.arrows { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; }
+.arrows a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--soft);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.arrows a svg { width: 16px; height: 16px; stroke-width: 2; }
+.arrows a:hover { background: var(--blue); color: #fff; }
+.slider {
+    flex: 1;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.slider::-webkit-scrollbar { display: none; }
+.items { display: flex; gap: 18px; width: 100%; padding: 5px 2px 8px; }
+
+/* CARD LAYANAN */
+.item {
+    position: relative;
+    flex: 0 0 calc((100% - 36px) / 3);
+    min-width: 0;
+    min-height: 150px;
+    padding: 48px 18px 20px;
+    background: #fff;
+    border: 1px dashed #9db6d3;
+    border-radius: 14px;
+    box-shadow: 0 2px 7px rgba(31, 58, 99, 0.08);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.item:hover { border-color: var(--sky); box-shadow: 0 4px 12px rgba(31, 58, 99, 0.12); }
+.tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--blue);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 7px 13px;
+    border-radius: 0 13px 0 12px;
+    white-space: nowrap;
+}
+.tag.express { background: var(--sky); }
+.item h3 { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 20px; color: var(--blue); }
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--sky);
+}
+.price b { font-size: 16px; color: var(--blue); font-weight: 700; }
+.price b small { font-weight: 400; font-size: 11px; }
+
+/* TABLET */
+@media (max-width: 900px) {
+    .page-title { font-size: 30px; }
+    .cat-head h2 { font-size: 22px; }
+    .row { gap: 12px; }
+    .items { gap: 16px; }
+    .item { flex-basis: calc((100% - 16px) / 2); padding: 46px 16px 18px; }
+    .item h3 { font-size: 14px; }
+    .price b { font-size: 15px; }
+}
+
+/* HP: 1 CARD PER SLIDE */
+@media (max-width: 560px) {
+    .page-title { font-size: 30px; margin: 40px 0; }
+    .category { margin-bottom: 36px; }
+    .cat-head { gap: 10px; margin-bottom: 18px; }
+    .cat-head img { width: 40px; height: 40px; }
+    .cat-head h2 { font-size: 20px; }
+    .cat-head p { font-size: 12px; }
+
+    .row { gap: 10px; }
+    .arrows { gap: 10px; }
+    .arrows a { width: 38px; height: 38px; }
+
+    .slider {
+        flex: 1;
+        width: 0;
+        min-width: 0;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .items {
+        display: flex;
+        width: 100%;
+        gap: 0;
+        padding: 5px 0 8px;
+    }
+
+    .item {
+        flex: 0 0 100%;
+        width: 100%;
+        min-width: 100%;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    .item h3 { font-size: 14px; margin-bottom: 18px; }
+    .price { font-size: 10px; }
+    .price b { font-size: 15px; }
+    .price b small { font-size: 10px; }
+    .tag { font-size: 9px; padding: 6px 11px; }
+}

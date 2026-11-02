@@ -6,33 +6,62 @@
   <title>Riwayat Pesanan - NAT Laundry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="beranda.css">
-  <link rel="stylesheet" href="pesanan.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/beranda.css">
+  <link rel="stylesheet" href="css/pesanan.css">
 </head>
 <body>
+  <!-- KONDISI KHUSU BUAT PELANGGAN -->
   <header class="navbar">
-    <span class="logo">NAT Laundry</span>
-    <nav>
-      <a href="beranda.html">Beranda</a>
-      <a href="layanan.html">Layanan</a>
-      <a href="pesanan.html" class="nav-active">Pesanan</a>
-      <span class="user">👤 Raditya Arya Wiguna</span>
-    </nav>
+      <span class="logo"><b style="font-style: normal;">NAT</b> Laundry</span>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+      </label>
+
+      <nav>
+          <a href="beranda.html">Beranda</a>
+          <a href="layanan.html">Layanan</a>
+          <a href="#"><b>Pesanan</b></a>
+          <div class="profile-menu">
+              <input type="checkbox" id="profile-toggle" class="profile-toggle">
+              <label for="profile-toggle" class="profile-trigger">
+                  <i data-lucide="user-round"></i>
+                  <span>Raditya Arya</span>
+                  <i data-lucide="chevron-down" class="profile-arrow"></i>
+              </label>
+              <div class="profile-dropdown">
+                  <div class="profile-info">
+                      <span class="profile-name">Raditya Arya - Pelanggan</span>
+                      <span class="profile-phone">+62 812345678912</span>
+                  </div>
+                  <div class="profile-divider"></div>
+                  <a href="beranda.html" class="btn logout-btn">
+                      <i data-lucide="log-out"></i>
+                      Logout
+                  </a>
+              </div>
+          </div>
+      </nav>
   </header>
 
   <main class="container">
     <div class="title-row">
-      <a href="pesanan.html" class="back" aria-label="Kembali">&lsaquo;</a>
-      <h1>Riwayat Pesanan</h1>
+      <a href="pesanan.html" class="back">
+          <i data-lucide="chevron-left"></i>
+      </a>
+      <h1><b>Riwayat</b> Pesanan</h1>
     </div>
 
     <form class="search" action="#" method="get">
       <input type="search" name="q" placeholder="Cari data riwayat pesanan disini">
-      <button type="submit" class="btn pdf">Ekspor PDF</button>
+      <a href="#" class="btn pdf">Export PDF</a>
     </form>
 
     <form class="filter" action="#" method="get">
-      <label for="bulan">Filter berdasarkan bulan:</label>
+      <label for="bulan">Filter berdasarkan bulan</label>
       <select id="bulan" name="bulan"><option selected>September 2026</option><option>Agustus 2026</option><option>Juli 2026</option></select>
     </form>
 
@@ -41,9 +70,9 @@
       <div class="pager">
         <span>Halaman <b>1</b> dari <b>3</b></span>
         <label for="per">Item per halaman</label>
-        <select id="per" name="per"><option selected>6</option><option>12</option><option>24</option></select>
-        <a href="#" aria-label="Sebelumnya">&lsaquo;</a>
-        <a href="#" aria-label="Selanjutnya">&rsaquo;</a>
+        <select id="per" name="per"><option selected>5</option><option>10</option><option>15</option></select>
+        <a class="back" href="#" aria-label="Sebelumnya"><i data-lucide="chevron-left"></i></a>
+        <a class="back" href="#" aria-label="Selanjutnya"><i data-lucide="chevron-right"></i></a>
       </div>
     </div>
 
@@ -51,7 +80,7 @@
         <article class="order">
           <div class="head">
             <div><div class="name">Raditya Arya Wiguna</div><div class="sub">Pemesanan : 02/09/2026 10:54</div></div>
-            <a href="#" class="badge">Detail</a>
+            <a href="#" class="badge">SELESAI</a>
           </div>
           <div class="line"><span class="lunas">LUNAS</span><span>CUCI KILOAN - REGULAR 3X24 JAM</span></div>
           <div class="detail"><span>Layanan</span><span>Cuci Kering Setrika</span><span>Berat</span><span>3 kg</span></div>
@@ -60,7 +89,7 @@
         <article class="order">
           <div class="head">
             <div><div class="name">Raditya Arya Wiguna</div><div class="sub">Pemesanan : 02/09/2026 15:02</div></div>
-            <a href="#" class="badge">Detail</a>
+            <a href="#" class="badge">SELESAI</a>
           </div>
           <div class="line"><span class="lunas">LUNAS</span><span>CUCI SATUAN - REGULAR 3X24 JAM</span></div>
           <div class="detail"><span>Layanan</span><span>Bedcover L</span><span>Jumlah</span><span>1 pcs</span></div>
@@ -69,7 +98,7 @@
         <article class="order">
           <div class="head">
             <div><div class="name">Raditya Arya Wiguna</div><div class="sub">Pemesanan : 02/09/2026 10:54</div></div>
-            <a href="#" class="badge">Detail</a>
+            <a href="#" class="badge">SELESAI</a>
           </div>
           <div class="line"><span class="lunas">LUNAS</span><span>CUCI KILOAN - REGULAR 3X24 JAM</span></div>
           <div class="detail"><span>Layanan</span><span>Cuci Kering Setrika</span><span>Berat</span><span>4 kg</span></div>
@@ -78,7 +107,7 @@
         <article class="order">
           <div class="head">
             <div><div class="name">Raditya Arya Wiguna</div><div class="sub">Pemesanan : 02/09/2026 15:02</div></div>
-            <a href="#" class="badge">Detail</a>
+            <a href="#" class="badge">SELESAI</a>
           </div>
           <div class="line"><span class="lunas">LUNAS</span><span>CUCI SATUAN - REGULAR 3X24 JAM</span></div>
           <div class="detail"><span>Layanan</span><span>Bedcover L</span><span>Jumlah</span><span>1 pcs</span></div>
@@ -87,7 +116,7 @@
         <article class="order">
           <div class="head">
             <div><div class="name">Raditya Arya Wiguna</div><div class="sub">Pemesanan : 02/09/2026 15:02</div></div>
-            <a href="#" class="badge">Detail</a>
+            <a href="#" class="badge">SELESAI</a>
           </div>
           <div class="line"><span class="lunas">LUNAS</span><span>CUCI SATUAN - REGULAR 3X24 JAM</span></div>
           <div class="detail"><span>Layanan</span><span>Bedcover L</span><span>Jumlah</span><span>1 pcs</span></div>
@@ -100,5 +129,10 @@
     <b>NAT Laundry | <i>Pakaian Wangi ya NAT Laundry Solusinya</i></b><br>
     Dikembangkan oleh Tim Capstone 2026
   </footer>
+  <!-- ICON LUCIDE -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

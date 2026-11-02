@@ -6,28 +6,55 @@
   <title>Pesanan - NAT Laundry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="beranda.css">
-  <link rel="stylesheet" href="pesanan.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/beranda.css">
+  <link rel="stylesheet" href="css/pesanan.css">
 </head>
 <body>
+  <!-- KONDISI KHUSU BUAT PELANGGAN -->
   <header class="navbar">
-    <span class="logo">NAT Laundry</span>
-    <nav>
-      <a href="beranda.html">Beranda</a>
-      <a href="layanan.html">Layanan</a>
-      <a href="pesanan.html" class="nav-active">Pesanan</a>
-      <span class="user">👤 Raditya Arya Wiguna</span>
-    </nav>
+      <span class="logo"><b style="font-style: normal;">NAT</b> Laundry</span>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+      </label>
+
+      <nav>
+          <a href="beranda.html">Beranda</a>
+          <a href="layanan.html">Layanan</a>
+          <a href="#"><b>Pesanan</b></a>
+          <div class="profile-menu">
+              <input type="checkbox" id="profile-toggle" class="profile-toggle">
+              <label for="profile-toggle" class="profile-trigger">
+                  <i data-lucide="user-round"></i>
+                  <span>Raditya Arya</span>
+                  <i data-lucide="chevron-down" class="profile-arrow"></i>
+              </label>
+              <div class="profile-dropdown">
+                  <div class="profile-info">
+                      <span class="profile-name">Raditya Arya - Pelanggan</span>
+                      <span class="profile-phone">+62 812345678912</span>
+                  </div>
+                  <div class="profile-divider"></div>
+                  <a href="beranda.html" class="btn logout-btn">
+                      <i data-lucide="log-out"></i>
+                      Logout
+                  </a>
+              </div>
+          </div>
+      </nav>
   </header>
 
   <main class="container">
     <div class="top">
       <div>
-        <h1>Pesanan <b>Kamu</b></h1>
-        <div class="date">🗓 1 September 2026 &nbsp; 15:35</div>
+        <h1><b>Pesanan</b> Kamu</h1>
+        <div class="date"><i data-lucide="calendar-days"></i> 1 September 2026    15:35</div>
       </div>
       <div class="acts">
-        <a href="#" class="btn pdf">Ekspor PDF</a>
+        <a href="#" class="btn pdf">Export PDF</a>
         <a href="riwayat.html" class="btn">Riwayat Pesanan</a>
       </div>
     </div>
@@ -36,7 +63,7 @@
         <article class="order">
           <div class="head">
             <div><div class="name">Raditya Arya Wiguna</div><div class="sub">Pemesanan : 02/09/2026 10:54</div></div>
-            <a href="#" class="badge">Detail</a>
+            <a href="#" class="badge">DIPROSES</a>
           </div>
           <div class="line"><span class="belum">BELUM BAYAR</span><span>CUCI KILOAN - REGULAR 3X24 JAM</span></div>
           <div class="detail"><span>Layanan</span><span>Cuci Kering Setrika</span><span>Berat</span><span>3 kg</span></div>
@@ -45,7 +72,7 @@
         <article class="order">
           <div class="head">
             <div><div class="name">Raditya Arya Wiguna</div><div class="sub">Pemesanan : 02/09/2026 15:02</div></div>
-            <a href="#" class="badge">Detail</a>
+            <a href="#" class="badge">DIPROSES</a>
           </div>
           <div class="line"><span class="lunas">LUNAS</span><span>CUCI SATUAN - REGULAR 3X24 JAM</span></div>
           <div class="detail"><span>Layanan</span><span>Bedcover L</span><span>Jumlah</span><span>1 pcs</span></div>
@@ -58,5 +85,11 @@
     <b>NAT Laundry | <i>Pakaian Wangi ya NAT Laundry Solusinya</i></b><br>
     Dikembangkan oleh Tim Capstone 2026
   </footer>
+
+  <!-- ICON LUCIDE -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

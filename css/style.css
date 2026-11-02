@@ -1,11 +1,9 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #1f3a63;
-  --blue: #2f5a8f;
-  --field: #eaeef4;
+  --blue: #315B8C;
+  --field: #ECF0F4;
   --placeholder: #4a86b5;
-  --focus: #1e90ff;
 }
 
 body {
@@ -15,41 +13,37 @@ body {
   align-items: center;
   justify-content: center;
   padding: 32px 16px;
-  color: var(--navy);
-  background: linear-gradient(180deg, #34598c 0%, #4f8fb8 100%);
+  color: var(--blue);
+  background: linear-gradient(180deg, #315B8C 0%, #4f8fb8 100%);
   background-attachment: fixed;
 }
 
 .wrapper { width: 100%; max-width: 420px; position: relative; }
 .wrapper.wide { max-width: 560px; }
-
-/* header */
-.header { color: #fff; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: flex-end; }
-.header small { display: block; font-size: 12px; font-weight: 400; }
-.header h1 { font-size: 20px; font-weight: 600; line-height: 1.2; }
-.brand { font-size: 11px; font-style: italic; font-weight: 600; margin-bottom: 4px; }
-
-.back {
-  position: absolute; left: -40px; top: 4px;
-  width: 24px; height: 24px; border-radius: 50%;
-  background: #e6e9ee; color: #555; border: none;
-  display: flex; align-items: center; justify-content: center;
-  text-decoration: none; font-size: 14px;
+.wrapper.wide a svg {
+  width: 16px; height: 16px; stroke-width: 2; color: var(--blue);
 }
 
-/* card */
-.card { background: #fff; border-radius: 14px; padding: 28px 24px 22px; }
-.card.login { border: 3px solid var(--focus); }
+/* header */
+.header { color: #fff; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: flex-end;}
+.header small { display: block; font-size: 14px; font-weight: 400; }
+.header h1 { font-size: 23px; font-weight: 600; line-height: 1.2; }
+.brand { font-size: 12px; font-style: italic; font-weight: 600; margin-bottom: 4px; }
+.register-heading { display: flex; align-items: center; gap: 16px; margin: 0 0 28px; }
+.register-heading .header { margin: 0; }
+.back { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: #e6e9ee; color: #555; display: flex; align-items: center; justify-content: center; text-decoration: none; }
 
+/* card */
+.card { background: #fff; border-radius: 18px; padding: 30px; }
 /* form */
 .group { margin-bottom: 14px; }
-label { display: block; font-size: 10px; font-weight: 600; margin-bottom: 6px; }
+label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
 
 .input-wrap { position: relative; }
 input, textarea {
-  width: 100%; border: 1px solid transparent; border-radius: 6px;
-  background: var(--field); padding: 10px 12px;
-  font-family: inherit; font-size: 11px; color: var(--navy);
+  width: 100%; border: 1px solid transparent; border-radius: 8px;
+  background: var(--field); padding: 14px;
+  font-family: inherit; font-size: 12px; color: var(--blue);
 }
 input::placeholder, textarea::placeholder { color: var(--placeholder); }
 input:focus, textarea:focus { outline: none; border-color: var(--focus); background: #fff; }
@@ -63,15 +57,15 @@ textarea { height: 84px; resize: none; }
 .toggle svg { width: 16px; height: 16px; }
 
 .btn {
-  width: 100%; border: none; border-radius: 5px; cursor: pointer;
+  width: 100%; border: none; border-radius: 12px; cursor: pointer;
   background: var(--blue); color: #fff;
-  font-family: inherit; font-size: 11px; font-weight: 600; padding: 10px 0;
+  font-family: inherit; font-size: 13px; font-weight: 600; padding: 14px;
   transition: background .2s;
 }
 .btn:hover { background: #244a78; }
 
 .login .btn { margin-top: 40px; }
-.foot { margin-top: 12px; font-size: 10px; font-weight: 500; }
+.foot { margin-top: 12px; font-size: 12px; font-weight: 500; }
 .foot a { color: var(--blue); font-weight: 600; text-decoration: none; margin-left: 6px; }
 .foot a:hover { text-decoration: underline; }
 
@@ -82,7 +76,7 @@ textarea { height: 84px; resize: none; }
 .grid .actions .btn { width: 100%; }
 
 @media (max-width: 560px) {
+  body {padding: 32px 25px;}
   .grid { grid-template-columns: 1fr; }
   .grid .span-row { grid-row: auto; }
-  .back { position: static; margin-bottom: 8px; }
 }

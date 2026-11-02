@@ -6,55 +6,90 @@
   <title>Jenis Layanan - NAT Laundry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dashboard.css">
-  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-
+<!-- SIDEBAR -->
+  <input type="checkbox" id="toggle-sidebar" hidden>
   <aside class="sidebar">
-    <div class="logo">NAT Laundry</div>
+    <div class="logo"><b>NAT</b> Laundry</div>
+    <hr style="border: 1px dashed var(--sky); margin-bottom: 40px;">
     <nav>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="data-pesanan.html">Data Pesanan</a>
-      <a href="data-pelanggan.html">Data Pelanggan</a>
-      <a href="data-layanan.html">Data Layanan</a>
-      <a href="data-jenis-layanan.html" class="active">Jenis Layanan</a>
-      <a href="laporan-transaksi.html">Laporan Transaksi</a>
+      <a href="dashboard.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+      <a href="data-pesanan.html"><i data-lucide="shopping-cart"></i>Data Pesanan</a>
+      <a href="data-pelanggan.html"><i data-lucide="users"></i>Data Pelanggan</a>
+      <a href="data-layanan.html"><i data-lucide="package"></i>Data Layanan</a>
+      <a href="#" class="active"><i data-lucide="layers"></i>Jenis Layanan</a>
+      <a href="laporan-transaksi.html"><i data-lucide="file-text"></i>Laporan Transaksi</a>
     </nav>
   </aside>
+  <label for="toggle-sidebar" class="overlay"></label>
 
   <main class="content">
     <div class="topbar">
+      <label for="toggle-sidebar" class="menu-toggle" aria-label="Buka menu"><i data-lucide="menu"></i></label>
       <h1><b>Jenis</b> Layanan</h1>
-      <div class="admin"><span class="av">👤</span><div><b>Nama Admin</b>Administrator</div></div>
+
+      <details class="admin">
+       <summary>
+          <i data-lucide="user-round"></i>
+          <div><b>Raditya Arya</b><small>Administrator</small></div>
+          <i data-lucide="chevron-down"></i>
+        </summary>
+        <div class="dropdown">
+          <p><b>Halo, Raditya Arya!</b>Administrator</p>
+          <a href="beranda.html" class="btn"><i data-lucide="log-out"></i>Logout</a>
+        </div>
+      </details>
     </div>
 
     <div class="split">
       <form class="add-card" action="#" method="post">
         <h2>Tambah Layanan</h2>
-        <label for="jenis">Jenis Layanan</label>
+        <p>Jenis Layanan</p>
         <input type="text" id="jenis" name="jenis" placeholder="Masukkan jenis layanan laundry" required>
-        <div class="btn-row"><button type="submit" class="btn">+ &nbsp;Simpan Data</button></div>
+        <div class="btn-row"><button type="submit" class="btn lg"><i data-lucide="plus"></i>Simpan Data</button></div>
       </form>
 
       <div>
-        <form class="search" action="#" method="get"><input type="search" name="q" placeholder="Cari jenis layanan disini"></form>
+        <form class="search" action="#" method="get">
+          <div class="search-wrap">
+              <i data-lucide="search"></i>
+              <input type="search" name="q" placeholder="Cari jenis layanan disini">
+          </div>
+        </form>
         <section class="card table-wrap">
           <table class="light-th">
             <tr><th class="c">No.</th><th class="c">Aksi</th><th class="c">Jenis Layanan</th></tr>
           <tr>
             <td class="c">1.</td>
-            <td><div class="acts"><a href="#" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
+            <td>
+              <div class="acts">
+                <a href="#" class="ib" title="Ubah"><i data-lucide="pencil"></i></a>
+                <button type="button" class="ib" title="Hapus"><i data-lucide="trash"></i></button>
+              </div>
+            </td>
             <td class="c">Cuci Kiloan</td>
           </tr>
           <tr>
             <td class="c">2.</td>
-            <td><div class="acts"><a href="#" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
+            <td>
+              <div class="acts">
+                <a href="#" class="ib" title="Ubah"><i data-lucide="pencil"></i></a>
+                <button type="button" class="ib" title="Hapus"><i data-lucide="trash"></i></button>
+              </div>
+            </td>
             <td class="c">Cuci Satuan</td>
           </tr>
           <tr>
             <td class="c">3.</td>
-            <td><div class="acts"><a href="#" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
+            <td>
+              <div class="acts">
+                <a href="#" class="ib" title="Ubah"><i data-lucide="pencil"></i></a>
+                <button type="button" class="ib" title="Hapus"><i data-lucide="trash"></i></button>
+              </div>
+            </td>
             <td class="c">Cuci Satuan Manual</td>
           </tr>
           </table>
@@ -63,5 +98,10 @@
     </div>
   </main>
 
+  <!-- ICON LUCIDE -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>

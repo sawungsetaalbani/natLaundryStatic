@@ -6,36 +6,61 @@
   <title>Tambah Pelanggan - NAT Laundry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dashboard.css">
-  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-
+<!-- SIDEBAR -->
+  <input type="checkbox" id="toggle-sidebar" hidden>
   <aside class="sidebar">
-    <div class="logo">NAT Laundry</div>
+    <div class="logo"><b>NAT</b> Laundry</div>
+    <hr style="border: 1px dashed var(--sky); margin-bottom: 40px;">
     <nav>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="data-pesanan.html">Data Pesanan</a>
-      <a href="data-pelanggan.html" class="active">Data Pelanggan</a>
-      <a href="data-layanan.html">Data Layanan</a>
-      <a href="data-jenis-layanan.html">Jenis Layanan</a>
-      <a href="laporan-transaksi.html">Laporan Transaksi</a>
+      <a href="dashboard.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+      <a href="data-pesanan.html"><i data-lucide="shopping-cart"></i>Data Pesanan</a>
+      <a href="#" class="active"><i data-lucide="users"></i>Data Pelanggan</a>
+      <a href="data-layanan.html"><i data-lucide="package"></i>Data Layanan</a>
+      <a href="data-jenis-layanan.html"><i data-lucide="layers"></i>Jenis Layanan</a>
+      <a href="laporan-transaksi.html"><i data-lucide="file-text"></i>Laporan Transaksi</a>
     </nav>
   </aside>
+  <label for="toggle-sidebar" class="overlay"></label>
 
   <main class="content">
     <div class="topbar">
+      <label for="toggle-sidebar" class="menu-toggle" aria-label="Buka menu"><i data-lucide="menu"></i></label>
       <h1><b>Tambah</b> Pelanggan</h1>
-      <div class="admin"><span class="av">👤</span><div><b>Nama Admin</b>Administrator</div></div>
+      <details class="admin">
+       <summary>
+          <i data-lucide="user-round"></i>
+          <div><b>Raditya Arya</b><small>Administrator</small></div>
+          <i data-lucide="chevron-down"></i>
+        </summary>
+        <div class="dropdown">
+          <p><b>Halo, Raditya Arya!</b>Administrator</p>
+          <a href="beranda.html" class="btn"><i data-lucide="log-out"></i>Logout</a>
+        </div>
+      </details>
     </div>
 
-    <a href="data-pelanggan.html" class="back" aria-label="Kembali">&lsaquo;</a>
+    <a href="data-pelanggan.html" class="kembali" aria-label="Kembali">
+        <i data-lucide="chevron-left"></i>
+    </a>
     <form class="card form-card" action="#" method="post">
       <div class="fgrid">
         <div class="col-stack">
           <div><label for="nama">Nama Pelanggan</label><input type="text" id="nama" name="nama" placeholder="Masukkan nama pelanggan" value="" required></div>
           <div><label for="username">Username</label><input type="text" id="username" name="username" placeholder="Masukkan username" value="" required></div>
-          <div><label for="password">Password</label><div class="pass"><input type="password" id="password" name="password" placeholder="Masukkan password" value="" required><span class="eye" aria-hidden="true">👁</span></div></div>
+          <div>
+              <label for="password">Password</label>
+              <div class="pass">
+                  <input type="password" id="password" name="password"
+                        placeholder="Masukkan password" required>
+                  <span class="toggle-password" aria-hidden="true">
+                      <i data-lucide="eye"></i>
+                  </span>
+              </div>
+          </div>
         </div>
         <div class="col-stack">
           <div><label for="telp">Nomor Telepon</label><div class="phone"><span class="pre">+62</span><input type="text" id="telp" name="telp" placeholder="Nomor telepon" value="" required></div></div>
@@ -45,6 +70,10 @@
       <div class="form-actions"><button type="submit" class="btn lg" style="background:var(--blue);color:#fff;font-weight:600">Simpan Data</button></div>
     </form>
   </main>
-
+<!-- ICON LUCIDE -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>

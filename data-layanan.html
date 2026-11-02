@@ -6,32 +6,52 @@
   <title>Data Layanan - NAT Laundry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dashboard.css">
-  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-
+<!-- SIDEBAR -->
+  <input type="checkbox" id="toggle-sidebar" hidden>
   <aside class="sidebar">
-    <div class="logo">NAT Laundry</div>
+    <div class="logo"><b>NAT</b> Laundry</div>
+    <hr style="border: 1px dashed var(--sky); margin-bottom: 40px;">
     <nav>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="data-pesanan.html">Data Pesanan</a>
-      <a href="data-pelanggan.html">Data Pelanggan</a>
-      <a href="data-layanan.html" class="active">Data Layanan</a>
-      <a href="data-jenis-layanan.html">Jenis Layanan</a>
-      <a href="laporan-transaksi.html">Laporan Transaksi</a>
+      <a href="dashboard.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+      <a href="data-pesanan.html"><i data-lucide="shopping-cart"></i>Data Pesanan</a>
+      <a href="data-pelanggan.html"><i data-lucide="users"></i>Data Pelanggan</a>
+      <a href="#" class="active"><i data-lucide="package"></i>Data Layanan</a>
+      <a href="data-jenis-layanan.html"><i data-lucide="layers"></i>Jenis Layanan</a>
+      <a href="laporan-transaksi.html"><i data-lucide="file-text"></i>Laporan Transaksi</a>
     </nav>
   </aside>
+  <label for="toggle-sidebar" class="overlay"></label>
 
   <main class="content">
     <div class="topbar">
+      <label for="toggle-sidebar" class="menu-toggle" aria-label="Buka menu"><i data-lucide="menu"></i></label>
       <h1><b>Data</b> Layanan</h1>
-      <div class="admin"><span class="av">👤</span><div><b>Nama Admin</b>Administrator</div></div>
+
+      <details class="admin">
+       <summary>
+          <i data-lucide="user-round"></i>
+          <div><b>Raditya Arya</b><small>Administrator</small></div>
+          <i data-lucide="chevron-down"></i>
+        </summary>
+        <div class="dropdown">
+          <p><b>Halo, Raditya Arya!</b>Administrator</p>
+          <a href="beranda.html" class="btn"><i data-lucide="log-out"></i>Logout</a>
+        </div>
+      </details>
     </div>
 
     <div class="toolbar">
-      <a href="tambah-layanan.html" class="btn lg" style="background:var(--blue);color:#fff;font-weight:600">+ Tambah Layanan</a>
-      <form class="search" action="#" method="get"><input type="search" name="q" placeholder="Cari data layanan disini"></form>
+      <a href="tambah-layanan.html" class="btn lg"><i data-lucide="plus"></i>Tambah Layanan</a>
+      <form class="search" action="#" method="get">
+          <div class="search-wrap">
+              <i data-lucide="search"></i>
+              <input type="search" name="q" placeholder="Cari data pelanggan disini">
+          </div>
+      </form>
     </div>
 
     <section class="card table-wrap">
@@ -39,42 +59,81 @@
         <tr><th class="c">No.</th><th class="c">Aksi</th><th class="c">Jenis Layanan</th><th class="c">Tipe</th><th class="c">Nama Layanan</th><th class="c">Harga</th><th class="c">Satuan</th></tr>
           <tr>
             <td class="c">1.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
+            <td>
+              <div class="acts">
+                <a href="ubah-layanan.html" class="ib" title="Ubah"><i data-lucide="pencil"></i></a>
+                <button type="button" class="ib" title="Hapus"><i data-lucide="trash"></i></button>
+              </div>
+            </td>
             <td class="c">Cuci Kiloan</td><td class="c">Reguler 3x24 jam</td><td class="c">Cuci Kering</td><td class="c">Rp. 5.000</td><td class="c">kg</td>
           </tr>
           <tr>
             <td class="c">2.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
+            <td>
+              <div class="acts">
+                <a href="ubah-layanan.html" class="ib" title="Ubah"><i data-lucide="pencil"></i></a>
+                <button type="button" class="ib" title="Hapus"><i data-lucide="trash"></i></button>
+              </div>
+            </td>
             <td class="c">Cuci Satuan</td><td class="c">Reguler 3x24 jam</td><td class="c">Setrika</td><td class="c">Rp. 5.000</td><td class="c">kg</td>
           </tr>
           <tr>
             <td class="c">3.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
+            <td>
+              <div class="acts">
+                <a href="ubah-layanan.html" class="ib" title="Ubah"><i data-lucide="pencil"></i></a>
+                <button type="button" class="ib" title="Hapus"><i data-lucide="trash"></i></button>
+              </div>
+            </td>
             <td class="c">Cuci Satuan Manual</td><td class="c">Reguler 3x24 jam</td><td class="c">Cuci Kering</td><td class="c">Rp. 5.000</td><td class="c">kg</td>
           </tr>
           <tr>
             <td class="c">4.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
+            <td>
+              <div class="acts">
+                <a href="ubah-layanan.html" class="ib" title="Ubah"><i data-lucide="pencil"></i></a>
+                <button type="button" class="ib" title="Hapus"><i data-lucide="trash"></i></button>
+              </div>
+            </td>
             <td class="c">Cuci Kiloan</td><td class="c">Express 1x24 jam</td><td class="c">Cuci Kering</td><td class="c">Rp. 5.000</td><td class="c">pcs</td>
           </tr>
           <tr>
             <td class="c">5.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
+            <td>
+              <div class="acts">
+                <a href="ubah-layanan.html" class="ib" title="Ubah"><i data-lucide="pencil"></i></a>
+                <button type="button" class="ib" title="Hapus"><i data-lucide="trash"></i></button>
+              </div>
+            </td>
             <td class="c">Cuci Satuan</td><td class="c">Reguler 3x24 jam</td><td class="c">Setrika</td><td class="c">Rp. 5.000</td><td class="c">kg</td>
           </tr>
           <tr>
             <td class="c">6.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
+            <td>
+              <div class="acts">
+                <a href="ubah-layanan.html" class="ib" title="Ubah"><i data-lucide="pencil"></i></a>
+                <button type="button" class="ib" title="Hapus"><i data-lucide="trash"></i></button>
+              </div>
+            </td>
             <td class="c">Cuci Satuan Manual</td><td class="c">Reguler 3x24 jam</td><td class="c">Cuci Kering</td><td class="c">Rp. 5.000</td><td class="c">kg</td>
           </tr>
           <tr>
             <td class="c">7.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
+            <td>
+              <div class="acts">
+                <a href="ubah-layanan.html" class="ib" title="Ubah"><i data-lucide="pencil"></i></a>
+                <button type="button" class="ib" title="Hapus"><i data-lucide="trash"></i></button>
+              </div>
+            </td>
             <td class="c">Cuci Satuan</td><td class="c">Reguler 3x24 jam</td><td class="c">Setrika</td><td class="c">Rp. 5.000</td><td class="c">kg</td>
           </tr>
       </table>
     </section>
   </main>
-
+    <!-- ICON LUCIDE -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
