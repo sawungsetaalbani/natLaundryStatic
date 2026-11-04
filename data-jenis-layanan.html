@@ -66,7 +66,9 @@
             <td class="c">1.</td>
             <td>
               <div class="acts">
-                <a href="#" class="ib" title="Ubah"><i data-lucide="pencil"></i></a>
+                <label for="open-edit" class="ib" title="Ubah">
+                    <i data-lucide="pencil"></i>
+                </label>
                 <button type="button" class="ib" title="Hapus"><i data-lucide="trash"></i></button>
               </div>
             </td>
@@ -95,6 +97,36 @@
           </table>
         </section>
       </div>
+    </div>
+    <input type="checkbox" id="open-edit" hidden>
+    <div class="edit-overlay">
+        <label for="open-edit" class="edit-backdrop"></label>
+
+        <div class="edit-popup">
+            <div class="edit-head">
+                <h2>Ubah Data Layanan</h2>
+                <label for="open-edit" class="edit-close" aria-label="Tutup">
+                    <i data-lucide="x"></i>
+                </label>
+            </div>
+
+            <form action="#" method="post">
+                <div class="edit-preview">
+                    <label>Jenis Layanan Sebelumnya</label>
+                    <label style="font-weight: 600; font-size: 18px;">Cuci Kiloan</label>
+                </div>
+                <div class="filter-divider"></div>
+                <div class="edit-field">
+                    <label for="jenis-baru">Jenis Layanan Baru</label>
+                    <input type="text" id="jenis-baru" name="jenis_baru"
+                        placeholder="Masukkan jenis layanan baru" required>
+                </div>
+
+                <div class="edit-actions">
+                    <button type="submit" class="btn lg">Ubah Data</button>
+                </div>
+            </form>
+        </div>
     </div>
   </main>
 

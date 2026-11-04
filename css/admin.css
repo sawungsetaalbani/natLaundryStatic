@@ -150,6 +150,25 @@
     height: 17px;
 }
 
+/* POP-UP UBAH JENIS LAYANAN */
+.edit-overlay { display:none; position:fixed; inset:0; z-index:100; align-items:center; justify-content:center; padding:20px; }
+#open-edit:checked ~ .edit-overlay { display:flex; }
+.edit-backdrop { position:absolute; inset:0; background:rgba(31,58,99,.45); cursor:pointer; }
+.edit-popup { position:relative; z-index:1; width:100%; max-width:460px; padding:26px; background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:0 10px 35px rgba(31,58,99,.18); }
+.edit-head { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:24px; }
+.edit-head h2 { font-size:19px; font-weight:600; color:var(--blue); }
+.edit-close { display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; background:var(--soft); color:var(--blue); cursor:pointer; }
+.edit-close svg { width:17px; height:17px; }
+.edit-preview, .edit-field { margin-bottom:20px; }
+.edit-popup label:not(.edit-close) { display:block; margin-bottom:8px; color:var(--blue); font-size:13px; font-weight:500; }
+.preview-value { padding:12px; border:1px solid var(--line); border-radius:7px; background:#eaeef4; color:var(--sky); font-size:13px; }
+.edit-field input { box-sizing:border-box; width:100%; padding:12px; border:1px solid var(--line); border-radius:7px; background:#eaeef4; color:var(--blue); font-family:inherit; font-size:13px; }
+.edit-field input::placeholder { color:var(--sky); }
+.edit-field input:focus { outline:2px solid #1e90ff; background:#fff; }
+.edit-actions { display:flex; justify-content:flex-end; }
+.edit-actions .btn.lg { font-family:inherit; cursor:pointer; }
+@media (max-width:480px) { .edit-popup { padding:20px; } .edit-head h2 { font-size:17px; } }
+
 /* RESPONSIVE */
 @media (max-width:1000px) {
     .report-top { grid-template-columns:1fr 1fr; }

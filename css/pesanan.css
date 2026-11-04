@@ -1,4 +1,4 @@
-/* halaman Pesanan & Riwayat (dipakai bersama beranda.css) */
+/* halaman Pesanan & Riwayat */
 .nav-active { font-weight:700; }
 .user { display:flex; align-items:center; gap:6px; }
 
@@ -8,8 +8,6 @@
 .top .date svg {width: 15px;height: 15px;stroke-width: 2;flex-shrink: 0;}
 .top .acts { display:flex; gap:8px; }
 .btn.pdf { background:var(--sky); }
-
-
 
 /* kartu pesanan */
 .orders { display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; padding-bottom: 60px; }

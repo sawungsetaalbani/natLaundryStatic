@@ -58,11 +58,101 @@
     <section class="panels">
       <div class="panel">
         <div class="panel-head">
-          <span>Grafik Penjualan</span>
-          <form class="right" action="#" method="get">
-            <label for="periode">Periode</label>
-            <select id="periode" name="periode"><option selected>Bulan</option><option>Tahun</option><option>Hari</option></select>
-          </form>
+            <div>
+                <span>Grafik Penjualan</span>
+                <small>BULAN - <b>2026</b></small>
+            </div>
+            <input type="checkbox" id="open-filter" hidden>
+            <label for="open-filter" class="btn filter-trigger">
+                <i data-lucide="sliders-horizontal"></i>
+                Filter data
+            </label>
+
+            <div class="filter-overlay">
+                <div class="filter-popup">
+                    <label for="open-filter" class="filter-close" aria-label="Tutup">×</label>
+                    <h3>Filtering Data Grafik</h3>
+                    <p class="filter-label">Pilih Jenis Filtering</p>
+                    <div class="filter-types">
+                        <input type="radio" name="filter-type" id="filter-yearly" checked>
+                        <label for="filter-yearly">Tahunan</label>
+
+                        <input type="radio" name="filter-type" id="filter-monthly">
+                        <label for="filter-monthly">Bulanan</label>
+
+                        <input type="radio" name="filter-type" id="filter-weekly">
+                        <label for="filter-weekly">Mingguan</label>
+                    </div>
+
+                    <div class="filter-divider"></div>
+
+                    <div class="filter-fields">
+                        <div class="filter-field yearly">
+                            <label>Rentang Tahun</label>
+                            <div class="filter-row">
+                                <select name="tahun_awal">
+                                    <option>2022</option>
+                                    <option>2023</option>
+                                    <option>2024</option>
+                                    <option>2025</option>
+                                    <option>2026</option>
+                                </select>
+                                <span>s.d.</span>
+                                <select name="tahun_akhir">
+                                    <option>2022</option>
+                                    <option>2023</option>
+                                    <option>2024</option>
+                                    <option>2025</option>
+                                    <option selected>2026</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="filter-field monthly">
+                            <label>Pilih Tahun Pendapatan</label>
+                            <select name="tahun_bulanan">
+                                <option>2022</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                                <option selected>2026</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-field weekly">
+                            <label>Sesuaikan Bulan dan Tahun</label>
+                            <div class="filter-row">
+                                <select name="bulan_mingguan">
+                                    <option>Januari</option>
+                                    <option selected>Februari</option>
+                                    <option>Maret</option>
+                                    <option>April</option>
+                                    <option>Mei</option>
+                                    <option>Juni</option>
+                                    <option>Juli</option>
+                                    <option>Agustus</option>
+                                    <option>September</option>
+                                    <option>Oktober</option>
+                                    <option>November</option>
+                                    <option>Desember</option>
+                                </select>
+                                <select name="tahun_mingguan">
+                                    <option>2022</option>
+                                    <option>2023</option>
+                                    <option>2024</option>
+                                    <option>2025</option>
+                                    <option selected>2026</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-actions">
+                        <label for="open-filter" class="filter-reset">Reset Filter <span>×</span></label>
+                        <button type="button" class="filter-apply">Terapkan</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="chart">
           <div class="yaxis"><span>100</span><span>75</span><span>50</span><span>25</span><span>0</span></div>
