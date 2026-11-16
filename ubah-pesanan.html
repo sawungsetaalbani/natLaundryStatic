@@ -6,45 +6,135 @@
   <title>Ubah Data Pesanan - NAT Laundry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dashboard.css">
   <link rel="stylesheet" href="admin.css">
+  <style>
+    /* Styling tombol back agar selaras dengan SVG ikon */
+    .up-back {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid var(--biru-muda, var(--line));
+      color: var(--biru, var(--blue));
+      margin: 6px 0 20px;
+    }
+    .up-back .ic {
+      width: 12px;
+      height: 12px;
+      flex: none;
+    }
+    .up-back:hover {
+      background: var(--abu, var(--soft));
+    }
+  </style>
 </head>
 <body>
 
-  <aside class="sidebar">
-    <div class="logo">NAT Laundry</div>
+  <!-- SPRITE IKON -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-dash" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 10h9.2L19 7H6.2"/><circle cx="9" cy="19" r="1.4"/><circle cx="16" cy="19" r="1.4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.2 2.8-5.2 6-5.2s6 2 6 5.2"/><path d="M16 5.5a3 3 0 010 5.6M18 14c2 .7 3 2.3 3 5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V5h6v2"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  </svg>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="logo">NAT Laundry</div>
+      <button type="button" class="hamburger" aria-label="Buka menu" aria-expanded="false"
+              onclick="this.setAttribute('aria-expanded', document.getElementById('sidebar').classList.toggle('open'))">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+          <line class="l1" x1="4" y1="6"  x2="20" y2="6"/>
+          <line class="l2" x1="4" y1="12" x2="20" y2="12"/>
+          <line class="l3" x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
     <nav>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="data-pesanan.html" class="active">Data Pesanan</a>
-      <a href="data-pelanggan.html">Data Pelanggan</a>
-      <a href="data-layanan.html">Data Layanan</a>
-      <a href="data-jenis-layanan.html">Jenis Layanan</a>
-      <a href="laporan-transaksi.html">Laporan Transaksi</a>
+      <a href="dashboard.html"><svg class="ic"><use href="#i-dash"/></svg>Dashboard</a>
+      <a href="data-pesanan.html" class="active"><svg class="ic"><use href="#i-cart"/></svg>Data Pesanan</a>
+      <a href="data-pelanggan.html"><svg class="ic"><use href="#i-users"/></svg>Data Pelanggan</a>
+      <a href="data-layanan.html"><svg class="ic"><use href="#i-box"/></svg>Data Layanan</a>
+      <a href="data-jenis-layanan.html"><svg class="ic"><use href="#i-tag"/></svg>Jenis Layanan</a>
+      <a href="laporan-transaksi.html"><svg class="ic"><use href="#i-file"/></svg>Laporan Transaksi</a>
     </nav>
   </aside>
 
   <main class="content">
     <div class="topbar">
       <h1><b>Ubah</b> Data Pesanan</h1>
-      <div class="admin"><span class="av">👤</span><div><b>Nama Admin</b>Administrator</div></div>
+      <!-- DROPDOWN PROFIL ADMIN -->
+      <details class="pf">
+        <summary class="admin">
+          <span class="av">👤</span>
+          <div><b>Raditya Arya</b>Admin Laundry</div>
+          <svg class="ic chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="pf-card">
+          <div class="nm">Raditya Arya</div>
+          <div class="sub">Admin Laundry</div>
+          <a class="item" href="profil-admin.html">Profil saya</a>
+          <a class="mbtn block" href="#modalLogout">Logout</a>
+        </div>
+      </details>
     </div>
 
-    <a href="data-pesanan.html" class="back" aria-label="Kembali">&lsaquo;</a>
+    <a href="data-pesanan.html" class="up-back" aria-label="Kembali"><svg class="ic"><use href="#i-back"/></svg></a>
+
     <form class="card form-card" action="#" method="post">
       <div class="ordhead">RADITYA ARYA WIGUNA <span>PS001</span><small>Tanggal Pesan : 02/09/2026</small></div>
       <div class="fgrid">
-        <div><label for="sp">Status Pesanan</label>
-          <select id="sp" name="status_pesanan" class="fld"><option selected>DIPROSES</option><option>SELESAI</option><option>DIAMBIL</option></select></div>
-        <div><label for="sb">Status Pembayaran</label>
-          <select id="sb" name="status_bayar" class="fld"><option selected>BELUM BAYAR</option><option>LUNAS</option></select></div>
+        <div>
+          <label for="sp">Status Pesanan</label>
+          <select id="sp" name="status_pesanan" class="fld">
+            <option selected>DIPROSES</option>
+            <option>SELESAI</option>
+            <option>DIAMBIL</option>
+          </select>
+        </div>
+        <div>
+          <label for="sb">Status Pembayaran</label>
+          <select id="sb" name="status_bayar" class="fld">
+            <option selected>BELUM BAYAR</option>
+            <option>LUNAS</option>
+          </select>
+        </div>
       </div>
 
       <div class="section-title">LIST PESANAN LAUNDRY</div>
       <div class="table-wrap">
         <table>
-          <tr><th class="c">No.</th><th>Layanan</th><th class="c">Berat / Jumlah</th><th class="c">Harga</th><th class="c">Subtotal</th><th class="c">Aksi</th></tr>
-          <tr><td class="c">1.</td><td>Cuci Kloan (Regular 3x24 jam)<br>Cuci Kering Setrika</td><td class="c">3 kg</td><td class="c">Rp. 7.000/kg</td><td class="c">Rp. 21.000</td><td class="c"><button type="button" class="ib" title="Hapus">🗑</button></td></tr>
-          <tr><td class="c">2.</td><td>Cuci Satuan (Regular 3x24 jam)<br>Bedcover S</td><td class="c">1 pcs</td><td class="c">Rp. 15.000/pcs</td><td class="c">Rp. 15.000</td><td class="c"><button type="button" class="ib" title="Hapus">🗑</button></td></tr>
+          <tr>
+            <th class="c">No.</th>
+            <th>Layanan</th>
+            <th class="c">Berat / Jumlah</th>
+            <th class="c">Harga</th>
+            <th class="c">Subtotal</th>
+            <th class="c">Aksi</th>
+          </tr>
+          <tr>
+            <td class="c">1.</td>
+            <td>Cuci Kiloan (Regular 3x24 jam)<br>Cuci Kering Setrika</td>
+            <td class="c">3 kg</td>
+            <td class="c">Rp. 7.000/kg</td>
+            <td class="c">Rp. 21.000</td>
+            <td class="c"><button type="button" class="ib" title="Hapus">🗑</button></td>
+          </tr>
+          <tr>
+            <td class="c">2.</td>
+            <td>Cuci Satuan (Regular 3x24 jam)<br>Bedcover S</td>
+            <td class="c">1 pcs</td>
+            <td class="c">Rp. 15.000/pcs</td>
+            <td class="c">Rp. 15.000</td>
+            <td class="c"><button type="button" class="ib" title="Hapus">🗑</button></td>
+          </tr>
         </table>
       </div>
 
@@ -57,6 +147,18 @@
       </div>
     </form>
   </main>
+
+  <!-- CARD LOGOUT -->
+  <div class="modal" id="modalLogout">
+    <div class="card">
+      <h3>Logout</h3>
+      <p>Apakah anda yakin ingin logout?</p>
+      <div class="act">
+        <a class="mbtn ghost" href="#">Batal</a>
+        <a class="mbtn" href="login.html">Logout</a>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

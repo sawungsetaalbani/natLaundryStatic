@@ -7,24 +7,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="beranda.css">
-  <link rel="stylesheet" href="layanan.css">
+
 </head>
 <body>
 
+  <!-- SPRITE IKON -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wash" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M4 8h16"/><circle cx="12" cy="14.5" r="3.6"/><path d="M7.5 5.5h1M10.5 5.5h1"/></symbol>
+  </svg>
+
   <header class="navbar">
     <span class="logo">NAT Laundry</span>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Buka menu navigasi">
+    <label for="nav-toggle" class="hamburger" aria-hidden="true"><span></span><span></span><span></span></label>
     <nav>
       <a href="beranda.html">Beranda</a>
       <a href="layanan.html" class="nav-active">Layanan</a>
-      <a href="login.html" class="btn-login">Login</a>
     </nav>
   </header>
 
   <main class="container">
-    <h1 class="page-title">Daftar Layanan</h1>
+    <h1 class="page-title"><b>Daftar</b> Layanan</h1>
 
       <section class="category">
-        <div class="cat-head"><span class="ic">🧺</span><div><h2>Cuci Kiloan</h2><p>Solusi hemat untuk pakaian harian Anda. Bersih higienis, rapi, dan siap pakai.</p></div></div>
+        <div class="cat-head"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wash"/></svg></span><div><h2>Cuci Kiloan</h2><p>Solusi hemat untuk pakaian harian Anda. Bersih higienis, rapi, dan siap pakai.</p></div></div>
         <div class="row">
           <div class="arrows"><a href="#k-4" aria-label="Selanjutnya">&rsaquo;</a><a href="#k-1" aria-label="Sebelumnya">&lsaquo;</a></div>
           <div class="items">
@@ -37,27 +43,27 @@
       </section>
 
       <section class="category">
-        <div class="cat-head"><span class="ic">🧺</span><div><h2>Cuci Satuan</h2><p>Perawatan ekstra khusus untuk item kesayangan seperti Bedcover, Jas, dan lainnya.</p></div></div>
+        <div class="cat-head"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wash"/></svg></span><div><h2>Cuci Satuan</h2><p>Perawatan ekstra khusus untuk item kesayangan seperti Bedcover, Jas, dan Sepatu.</p></div></div>
         <div class="row">
           <div class="arrows"><a href="#s-4" aria-label="Selanjutnya">&rsaquo;</a><a href="#s-1" aria-label="Sebelumnya">&lsaquo;</a></div>
           <div class="items">
           <div class="item" id="s-1"><span class="tag ">Reguler 3x24 jam</span><h3>Bedcover S</h3><div class="price"><span>Harga Layanan</span><b>15.000 <small>/ pcs</small></b></div></div>
-          <div class="item" id="s-2"><span class="tag ">Reguler 3x24 jam</span><h3>Bedcover L</h3><div class="price"><span>Harga Layanan</span><b>29.000 <small>/ pcs</small></b></div></div>
-          <div class="item" id="s-3"><span class="tag ">Reguler 3x24 jam</span><h3>Bedcover XL</h3><div class="price"><span>Harga Layanan</span><b>29.000 <small>/ pcs</small></b></div></div>
+          <div class="item" id="s-2"><span class="tag ">Reguler 3x24 jam</span><h3>Bedcover L</h3><div class="price"><span>Harga Layanan</span><b>20.000 <small>/ pcs</small></b></div></div>
+          <div class="item" id="s-3"><span class="tag ">Reguler 3x24 jam</span><h3>Bedcover XL</h3><div class="price"><span>Harga Layanan</span><b>25.000 <small>/ pcs</small></b></div></div>
           <div class="item" id="s-4"><span class="tag ">Reguler 3x24 jam</span><h3>Selimut XS sd S</h3><div class="price"><span>Harga Layanan</span><b>5.000 <small>/ pcs</small></b></div></div>
           </div>
         </div>
       </section>
 
       <section class="category">
-        <div class="cat-head"><span class="ic">🧺</span><div><h2>Cuci Satuan Manual</h2><p>Pencucian manual penuh ketelitian untuk menjaga bahan, warna, dan bentuk tas kesayangan Anda.</p></div></div>
+        <div class="cat-head"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wash"/></svg></span><div><h2>Cuci Satuan Manual</h2><p>Pencucian manual penuh ketelitian untuk menjaga bahan, warna, dan bentuk tas kesayangan Anda.</p></div></div>
         <div class="row">
           <div class="arrows"><a href="#m-4" aria-label="Selanjutnya">&rsaquo;</a><a href="#m-1" aria-label="Sebelumnya">&lsaquo;</a></div>
           <div class="items">
           <div class="item" id="m-1"><span class="tag ">Reguler 3x24 jam</span><h3>Ransel S - M</h3><div class="price"><span>Harga Layanan</span><b>15.000 <small>/ pcs</small></b></div></div>
           <div class="item" id="m-2"><span class="tag ">Reguler 3x24 jam</span><h3>Ransel L - XL</h3><div class="price"><span>Harga Layanan</span><b>20.000 <small>/ pcs</small></b></div></div>
-          <div class="item" id="m-3"><span class="tag ">Reguler 3x24 jam</span><h3>Tote Bag</h3><div class="price"><span>Harga Layanan</span><b>8.000 <small>/ pcs</small></b></div></div>
-          <div class="item" id="m-4"><span class="tag ">Reguler 3x24 jam</span><h3>Tas XXI</h3><div class="price"><span>Harga Layanan</span><b>5.000 <small>/ pcs</small></b></div></div>
+          <div class="item" id="m-3"><span class="tag ">Reguler 3x24 jam</span><h3>Totebag</h3><div class="price"><span>Harga Layanan</span><b>8.000 <small>/ pcs</small></b></div></div>
+          <div class="item" id="m-4"><span class="tag ">Reguler 3x24 jam</span><h3>Tas XS</h3><div class="price"><span>Harga Layanan</span><b>5.000 <small>/ pcs</small></b></div></div>
           </div>
         </div>
       </section>

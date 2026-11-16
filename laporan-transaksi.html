@@ -6,27 +6,56 @@
   <title>Laporan Transaksi - NAT Laundry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dashboard.css">
   <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
-  <aside class="sidebar">
-    <div class="logo">NAT Laundry</div>
+  <!-- SPRITE IKON -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-dash" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 10h9.2L19 7H6.2"/><circle cx="9" cy="19" r="1.4"/><circle cx="16" cy="19" r="1.4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.2 2.8-5.2 6-5.2s6 2 6 5.2"/><path d="M16 5.5a3 3 0 010 5.6M18 14c2 .7 3 2.3 3 5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V5h6v2"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/></symbol>
+  </svg>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="logo">NAT Laundry</div>
+      <button type="button" class="hamburger" aria-label="Buka menu" aria-expanded="false"
+              onclick="this.setAttribute('aria-expanded', document.getElementById('sidebar').classList.toggle('open'))">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+          <line class="l1" x1="4" y1="6"  x2="20" y2="6"/>
+          <line class="l2" x1="4" y1="12" x2="20" y2="12"/>
+          <line class="l3" x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
     <nav>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="data-pesanan.html">Data Pesanan</a>
-      <a href="data-pelanggan.html">Data Pelanggan</a>
-      <a href="data-layanan.html">Data Layanan</a>
-      <a href="jenis-layanan.html">Jenis Layanan</a>
-      <a href="laporan-transaksi.html" class="active">Laporan Transaksi</a>
+      <a href="dashboard.html"><svg class="ic"><use href="#i-dash"/></svg>Dashboard</a>
+      <a href="data-pesanan.html" ><svg class="ic"><use href="#i-cart"/></svg>Data Pesanan</a>
+      <a href="data-pelanggan.html"><svg class="ic"><use href="#i-users"/></svg>Data Pelanggan</a>
+      <a href="data-layanan.html"><svg class="ic"><use href="#i-box"/></svg>Data Layanan</a>
+      <a href="data-jenis-layanan.html"><svg class="ic"><use href="#i-tag"/></svg>Jenis Layanan</a>
+      <a href="laporan-transaksi.html" class="active"><svg class="ic"><use href="#i-file"/></svg>Laporan Transaksi</a>
     </nav>
   </aside>
 
   <main class="content">
     <div class="topbar">
       <h1><b>Laporan</b> Transaksi</h1>
-      <div class="admin"><span class="av">👤</span><div><b>Nama Admin</b>Administrator</div></div>
+      <!-- DROPDOWN PROFIL ADMIN -->
+      <details class="pf">
+        <summary class="admin"><span class="av">👤</span><div><b>Raditya Arya</b>Admin Laundry</div><svg class="ic chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="pf-card">
+          <div class="nm">Raditya Arya</div><div class="sub">Admin Laundry</div>
+          <a class="item" href="profil-admin.html">Profil saya</a>
+          <a class="mbtn block" href="#modalLogout">Logout</a>
+        </div>
+      </details>
     </div>
 
     <section class="report-top">
@@ -51,7 +80,10 @@
     </section>
 
     <div class="bar-row">
-      <form class="search" action="#" method="get"><input type="search" name="q" placeholder="Cari berdasarkan pemesan, kode dan layanan"></form>
+      <form class="t-search" action="#" method="get" style="flex:0 1 380px">
+        <svg class="ic"><use href="#i-search"/></svg>
+        <input type="search" name="q" placeholder="Cari berdasarkan pemesan, kode dan layanan">
+      </form>
       <div class="pager">
         <span>Halaman <b>1</b> dari <b>3</b></span>
         <label for="per" style="margin:0;font-weight:400">Item per halaman</label>
@@ -61,48 +93,58 @@
       </div>
     </div>
 
-    <section class="card table-wrap">
-      <table class="light-th">
-        <tr><th class="c">No.</th><th class="c">Kode Pesanan</th><th class="c">Pemesan</th><th class="c">Layanan</th><th class="c">Berat / Jumlah</th><th class="c">Total</th><th class="c">Pembayaran</th></tr>
+    <section class="t-wrap">
+      <table class="t-table light-th">
+        <thead>
+          <tr><th>No.</th><th>Kode Pesanan</th><th>Pemesan</th><th>Layanan</th><th>Berat / Jumlah</th><th>Total</th><th>Pembayaran</th></tr>
+        </thead>
+        <tbody>
           <tr>
-            <td class="c">1.</td>
-            <td class="c">PS001</td>
-            <td class="c">Agung Abadi<div class="sub">10/09/2026 &nbsp;10.11</div></td>
-            <td class="c">Cuci Kiloan - Regular 3x24 jam<span class="ok-text">STATUS : SELESAI</span></td>
-            <td class="c">5 kg</td>
-            <td class="c">Rp. 36.000</td>
-            <td class="c"><span class="ok-text">LUNAS</span></td>
+            <td>1.</td>
+            <td>PS001</td>
+            <td>Agung Abadi<div class="sub">10/09/2026 &nbsp;10.11</div></td>
+            <td>Cuci Kiloan - Regular 3x24 jam<span class="ok-text">STATUS : SELESAI</span></td>
+            <td>5 kg</td>
+            <td>Rp. 36.000</td>
+            <td><span class="ok-text">LUNAS</span></td>
           </tr>
           <tr>
-            <td class="c">2.</td>
-            <td class="c">PS002</td>
-            <td class="c">Sulis<div class="sub">10/09/2026 &nbsp;10.11</div></td>
-            <td class="c">Cuci Kiloan - Regular 3x24 jam<span class="ok-text">STATUS : SELESAI</span></td>
-            <td class="c">2.1 kg</td>
-            <td class="c">Rp. 16.000</td>
-            <td class="c"><span class="ok-text">LUNAS</span></td>
+            <td>2.</td>
+            <td>PS002</td>
+            <td>Sulis<div class="sub">10/09/2026 &nbsp;10.11</div></td>
+            <td>Cuci Kiloan - Regular 3x24 jam<span class="ok-text">STATUS : SELESAI</span></td>
+            <td>2.1 kg</td>
+            <td>Rp. 16.000</td>
+            <td><span class="ok-text">LUNAS</span></td>
           </tr>
           <tr>
-            <td class="c">3.</td>
-            <td class="c">PS003</td>
-            <td class="c">Dwi Sri<div class="sub">10/09/2026 &nbsp;10.11</div></td>
-            <td class="c">Cuci Manual - Regular 3x24 jam<span class="ok-text">STATUS : SELESAI</span></td>
-            <td class="c">4.23 kg</td>
-            <td class="c">Rp. 52.000</td>
-            <td class="c"><span class="ok-text">LUNAS</span></td>
+            <td>3.</td>
+            <td>PS003</td>
+            <td>Dwi Sri<div class="sub">10/09/2026 &nbsp;10.11</div></td>
+            <td>Cuci Manual - Regular 3x24 jam<span class="ok-text">STATUS : SELESAI</span></td>
+            <td>4.23 kg</td>
+            <td>Rp. 52.000</td>
+            <td><span class="ok-text">LUNAS</span></td>
           </tr>
           <tr>
-            <td class="c">4.</td>
-            <td class="c">PS006</td>
-            <td class="c">Sawung Seta<div class="sub">10/09/2026 &nbsp;10.11</div></td>
-            <td class="c">Cuci Manual - Regular 3x24 jam<span class="ok-text">STATUS : SELESAI</span></td>
-            <td class="c">3.5 kg</td>
-            <td class="c">Rp. 20.000</td>
-            <td class="c"><span class="ok-text">LUNAS</span></td>
+            <td>4.</td>
+            <td>PS006</td>
+            <td>Sawung Seta<div class="sub">10/09/2026 &nbsp;10.11</div></td>
+            <td>Cuci Manual - Regular 3x24 jam<span class="ok-text">STATUS : SELESAI</span></td>
+            <td>3.5 kg</td>
+            <td>Rp. 20.000</td>
+            <td><span class="ok-text">LUNAS</span></td>
           </tr>
+        </tbody>
       </table>
     </section>
   </main>
+
+  <!-- CARD LOGOUT -->
+  <div class="modal" id="modalLogout"><div class="card">
+    <h3>Logout</h3><p>Apakah anda yakin ingin logout?</p>
+    <div class="act"><a class="mbtn ghost" href="#">Batal</a><a class="mbtn" href="login.html">Logout</a></div>
+  </div></div>
 
 </body>
 </html>

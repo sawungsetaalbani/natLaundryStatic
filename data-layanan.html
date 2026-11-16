@@ -6,75 +6,120 @@
   <title>Data Layanan - NAT Laundry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dashboard.css">
   <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
-  <aside class="sidebar">
-    <div class="logo">NAT Laundry</div>
+  <!-- SPRITE IKON -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-dash" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 10h9.2L19 7H6.2"/><circle cx="9" cy="19" r="1.4"/><circle cx="16" cy="19" r="1.4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.2 2.8-5.2 6-5.2s6 2 6 5.2"/><path d="M16 5.5a3 3 0 010 5.6M18 14c2 .7 3 2.3 3 5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V5h6v2"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M5 7h14M10 7V5h4v2M7 7l1 13h8l1-13M10 11v6M14 11v6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  </svg>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="logo">NAT Laundry</div>
+      <button type="button" class="hamburger" aria-label="Buka menu" aria-expanded="false"
+              onclick="this.setAttribute('aria-expanded', document.getElementById('sidebar').classList.toggle('open'))">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+          <line class="l1" x1="4" y1="6"  x2="20" y2="6"/>
+          <line class="l2" x1="4" y1="12" x2="20" y2="12"/>
+          <line class="l3" x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
     <nav>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="data-pesanan.html">Data Pesanan</a>
-      <a href="data-pelanggan.html">Data Pelanggan</a>
-      <a href="data-layanan.html" class="active">Data Layanan</a>
-      <a href="data-jenis-layanan.html">Jenis Layanan</a>
-      <a href="laporan-transaksi.html">Laporan Transaksi</a>
+      <a href="dashboard.html"><svg class="ic"><use href="#i-dash"/></svg>Dashboard</a>
+      <a href="data-pesanan.html"><svg class="ic"><use href="#i-cart"/></svg>Data Pesanan</a>
+      <a href="data-pelanggan.html"><svg class="ic"><use href="#i-users"/></svg>Data Pelanggan</a>
+      <a href="data-layanan.html" class="active"><svg class="ic"><use href="#i-box"/></svg>Data Layanan</a>
+      <a href="data-jenis-layanan.html"><svg class="ic"><use href="#i-tag"/></svg>Jenis Layanan</a>
+      <a href="laporan-transaksi.html"><svg class="ic"><use href="#i-file"/></svg>Laporan Transaksi</a>
     </nav>
   </aside>
 
   <main class="content">
     <div class="topbar">
       <h1><b>Data</b> Layanan</h1>
-      <div class="admin"><span class="av">👤</span><div><b>Nama Admin</b>Administrator</div></div>
+      <!-- DROPDOWN PROFIL ADMIN -->
+      <details class="pf">
+        <summary class="admin"><span class="av">👤</span><div><b>Raditya Arya</b>Admin Laundry</div><svg class="ic chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="pf-card">
+          <div class="nm">Raditya Arya</div><div class="sub">Admin Laundry</div>
+          <a class="item" href="profil-admin.html">Profil saya</a>
+          <a class="mbtn block" href="#modalLogout">Logout</a>
+        </div>
+      </details>
     </div>
 
-    <div class="toolbar">
-      <a href="tambah-layanan.html" class="btn lg" style="background:var(--blue);color:#fff;font-weight:600">+ Tambah Layanan</a>
-      <form class="search" action="#" method="get"><input type="search" name="q" placeholder="Cari data layanan disini"></form>
+    <div class="t-bar">
+      <a href="tambah-layanan.html" class="t-add"><svg class="ic"><use href="#i-plus"/></svg>Tambah Layanan</a>
+      <form class="t-search" action="#" method="get">
+        <svg class="ic"><use href="#i-search"/></svg>
+        <input type="search" name="q" placeholder="Cari data layanan disini">
+      </form>
     </div>
 
-    <section class="card table-wrap">
-      <table>
-        <tr><th class="c">No.</th><th class="c">Aksi</th><th class="c">Jenis Layanan</th><th class="c">Tipe</th><th class="c">Nama Layanan</th><th class="c">Harga</th><th class="c">Satuan</th></tr>
+    <section class="t-wrap">
+      <table class="t-table">
+        <thead>
+          <tr><th>No.</th><th>Aksi</th><th>Jenis Layanan</th><th>Tipe</th><th>Nama Layanan</th><th>Harga</th><th>Satuan</th></tr>
+        </thead>
+        <tbody>
           <tr>
-            <td class="c">1.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
-            <td class="c">Cuci Kiloan</td><td class="c">Reguler 3x24 jam</td><td class="c">Cuci Kering</td><td class="c">Rp. 5.000</td><td class="c">kg</td>
+            <td>1.</td>
+            <td><div class="t-act"><a href="ubah-layanan.html" title="Ubah"><svg class="ic"><use href="#i-edit"/></svg></a><button type="button" title="Hapus"><svg class="ic"><use href="#i-trash"/></svg></button></div></td>
+            <td>Cuci Kiloan</td><td>Reguler 3x24 jam</td><td>Cuci Kering</td><td>Rp. 5.000</td><td>kg</td>
           </tr>
           <tr>
-            <td class="c">2.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
-            <td class="c">Cuci Satuan</td><td class="c">Reguler 3x24 jam</td><td class="c">Setrika</td><td class="c">Rp. 5.000</td><td class="c">kg</td>
+            <td>2.</td>
+            <td><div class="t-act"><a href="ubah-layanan.html" title="Ubah"><svg class="ic"><use href="#i-edit"/></svg></a><button type="button" title="Hapus"><svg class="ic"><use href="#i-trash"/></svg></button></div></td>
+            <td>Cuci Satuan</td><td>Reguler 3x24 jam</td><td>Setrika</td><td>Rp. 5.000</td><td>kg</td>
           </tr>
           <tr>
-            <td class="c">3.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
-            <td class="c">Cuci Satuan Manual</td><td class="c">Reguler 3x24 jam</td><td class="c">Cuci Kering</td><td class="c">Rp. 5.000</td><td class="c">kg</td>
+            <td>3.</td>
+            <td><div class="t-act"><a href="ubah-layanan.html" title="Ubah"><svg class="ic"><use href="#i-edit"/></svg></a><button type="button" title="Hapus"><svg class="ic"><use href="#i-trash"/></svg></button></div></td>
+            <td>Cuci Satuan Manual</td><td>Reguler 3x24 jam</td><td>Cuci Kering</td><td>Rp. 5.000</td><td>kg</td>
           </tr>
           <tr>
-            <td class="c">4.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
-            <td class="c">Cuci Kiloan</td><td class="c">Express 1x24 jam</td><td class="c">Cuci Kering</td><td class="c">Rp. 5.000</td><td class="c">pcs</td>
+            <td>4.</td>
+            <td><div class="t-act"><a href="ubah-layanan.html" title="Ubah"><svg class="ic"><use href="#i-edit"/></svg></a><button type="button" title="Hapus"><svg class="ic"><use href="#i-trash"/></svg></button></div></td>
+            <td>Cuci Kiloan</td><td>Express 1x24 jam</td><td>Cuci Kering</td><td>Rp. 5.000</td><td>pcs</td>
           </tr>
           <tr>
-            <td class="c">5.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
-            <td class="c">Cuci Satuan</td><td class="c">Reguler 3x24 jam</td><td class="c">Setrika</td><td class="c">Rp. 5.000</td><td class="c">kg</td>
+            <td>5.</td>
+            <td><div class="t-act"><a href="ubah-layanan.html" title="Ubah"><svg class="ic"><use href="#i-edit"/></svg></a><button type="button" title="Hapus"><svg class="ic"><use href="#i-trash"/></svg></button></div></td>
+            <td>Cuci Satuan</td><td>Reguler 3x24 jam</td><td>Setrika</td><td>Rp. 5.000</td><td>kg</td>
           </tr>
           <tr>
-            <td class="c">6.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
-            <td class="c">Cuci Satuan Manual</td><td class="c">Reguler 3x24 jam</td><td class="c">Cuci Kering</td><td class="c">Rp. 5.000</td><td class="c">kg</td>
+            <td>6.</td>
+            <td><div class="t-act"><a href="ubah-layanan.html" title="Ubah"><svg class="ic"><use href="#i-edit"/></svg></a><button type="button" title="Hapus"><svg class="ic"><use href="#i-trash"/></svg></button></div></td>
+            <td>Cuci Satuan Manual</td><td>Reguler 3x24 jam</td><td>Cuci Kering</td><td>Rp. 5.000</td><td>kg</td>
           </tr>
           <tr>
-            <td class="c">7.</td>
-            <td><div class="acts"><a href="ubah-layanan.html" class="ib" title="Ubah">✎</a><button type="button" class="ib" title="Hapus">🗑</button></div></td>
-            <td class="c">Cuci Satuan</td><td class="c">Reguler 3x24 jam</td><td class="c">Setrika</td><td class="c">Rp. 5.000</td><td class="c">kg</td>
+            <td>7.</td>
+            <td><div class="t-act"><a href="ubah-layanan.html" title="Ubah"><svg class="ic"><use href="#i-edit"/></svg></a><button type="button" title="Hapus"><svg class="ic"><use href="#i-trash"/></svg></button></div></td>
+            <td>Cuci Satuan</td><td>Reguler 3x24 jam</td><td>Setrika</td><td>Rp. 5.000</td><td>kg</td>
           </tr>
+        </tbody>
       </table>
     </section>
   </main>
+
+  <!-- CARD LOGOUT -->
+  <div class="modal" id="modalLogout"><div class="card">
+    <h3>Logout</h3><p>Apakah anda yakin ingin logout?</p>
+    <div class="act"><a class="mbtn ghost" href="#">Batal</a><a class="mbtn" href="login.html">Logout</a></div>
+  </div></div>
 
 </body>
 </html>

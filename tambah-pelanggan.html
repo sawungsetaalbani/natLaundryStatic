@@ -6,45 +6,116 @@
   <title>Tambah Pelanggan - NAT Laundry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dashboard.css">
   <link rel="stylesheet" href="admin.css">
+  <style>
+    /* ---- Form tambah pelanggan (sesuai Figma) ---- */
+    .tp-back{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;
+      background:#fff;border:1px solid var(--biru-muda);color:var(--biru);margin:6px 0 20px}
+    .tp-back .ic{width:12px;height:12px;flex:none}
+    .tp-back:hover{background:var(--abu)}
+    .tp-card{background:#fff;border:1px solid var(--biru-muda);border-radius:16px;padding:26px 30px;font-family:'Poppins',sans-serif}
+    .tp-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 40px}
+    .tp-col{display:flex;flex-direction:column;gap:18px}
+    .tp-field{display:flex;flex-direction:column;flex:1}
+    .tp-field label{font-size:10px;font-weight:500;color:var(--biru);margin-bottom:8px}
+    .tp-field input,.tp-field textarea{width:100%;border:1px solid transparent;background:#eaeef4;border-radius:8px;
+      padding:0 16px;height:38px;font:400 10px 'Poppins',sans-serif;color:var(--biru)}
+    .tp-field input::placeholder,.tp-field textarea::placeholder{color:var(--biru-muda)}
+    .tp-field input:focus,.tp-field textarea:focus{outline:0;border-color:var(--biru);background:#fff}
+    .tp-field textarea{flex:1;height:auto;min-height:110px;padding:12px 16px;resize:none}
+    .tp-phone{display:flex;align-items:center;gap:12px;background:#eaeef4;border:1px solid transparent;border-radius:8px;padding:0 16px;height:38px}
+    .tp-phone:focus-within{border-color:var(--biru);background:#fff}
+    .tp-phone .pre{font-size:10px;font-weight:500;color:var(--biru)}
+    .tp-phone input{flex:1;border:0;background:transparent;padding:0;height:100%;border-radius:0}
+    .tp-phone input:focus{outline:0;background:transparent}
+    .tp-actions{display:flex;justify-content:flex-end;margin-top:22px}
+    .tp-save{background:var(--biru);color:#fff;border:0;border-radius:8px;padding:11px 30px;font:500 10px 'Poppins',sans-serif;cursor:pointer}
+    .tp-save:hover{filter:brightness(1.1)}
+    @media (max-width:700px){.tp-grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
 
-  <aside class="sidebar">
-    <div class="logo">NAT Laundry</div>
+  <!-- SPRITE IKON -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-dash" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 10h9.2L19 7H6.2"/><circle cx="9" cy="19" r="1.4"/><circle cx="16" cy="19" r="1.4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.2 2.8-5.2 6-5.2s6 2 6 5.2"/><path d="M16 5.5a3 3 0 010 5.6M18 14c2 .7 3 2.3 3 5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V5h6v2"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  </svg>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="logo">NAT Laundry</div>
+      <button type="button" class="hamburger" aria-label="Buka menu" aria-expanded="false"
+              onclick="this.setAttribute('aria-expanded', document.getElementById('sidebar').classList.toggle('open'))">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+          <line class="l1" x1="4" y1="6"  x2="20" y2="6"/>
+          <line class="l2" x1="4" y1="12" x2="20" y2="12"/>
+          <line class="l3" x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
     <nav>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="data-pesanan.html">Data Pesanan</a>
-      <a href="data-pelanggan.html" class="active">Data Pelanggan</a>
-      <a href="data-layanan.html">Data Layanan</a>
-      <a href="data-jenis-layanan.html">Jenis Layanan</a>
-      <a href="laporan-transaksi.html">Laporan Transaksi</a>
+      <a href="dashboard.html"><svg class="ic"><use href="#i-dash"/></svg>Dashboard</a>
+      <a href="data-pesanan.html"><svg class="ic"><use href="#i-cart"/></svg>Data Pesanan</a>
+      <a href="data-pelanggan.html" class="active"><svg class="ic"><use href="#i-users"/></svg>Data Pelanggan</a>
+      <a href="data-layanan.html"><svg class="ic"><use href="#i-box"/></svg>Data Layanan</a>
+      <a href="data-jenis-layanan.html"><svg class="ic"><use href="#i-tag"/></svg>Jenis Layanan</a>
+      <a href="laporan-transaksi.html"><svg class="ic"><use href="#i-file"/></svg>Laporan Transaksi</a>
     </nav>
   </aside>
 
   <main class="content">
     <div class="topbar">
       <h1><b>Tambah</b> Pelanggan</h1>
-      <div class="admin"><span class="av">👤</span><div><b>Nama Admin</b>Administrator</div></div>
+      <!-- DROPDOWN PROFIL ADMIN -->
+      <details class="pf">
+        <summary class="admin"><span class="av">👤</span><div><b>Raditya Arya</b>Admin Laundry</div><svg class="ic chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="pf-card">
+          <div class="nm">Raditya Arya</div><div class="sub">Admin Laundry</div>
+          <a class="item" href="profil-admin.html">Profil saya</a>
+          <a class="mbtn block" href="#modalLogout">Logout</a>
+        </div>
+      </details>
     </div>
 
-    <a href="data-pelanggan.html" class="back" aria-label="Kembali">&lsaquo;</a>
-    <form class="card form-card" action="#" method="post">
-      <div class="fgrid">
-        <div class="col-stack">
-          <div><label for="nama">Nama Pelanggan</label><input type="text" id="nama" name="nama" placeholder="Masukkan nama pelanggan" value="" required></div>
-          <div><label for="username">Username</label><input type="text" id="username" name="username" placeholder="Masukkan username" value="" required></div>
-          <div><label for="password">Password</label><div class="pass"><input type="password" id="password" name="password" placeholder="Masukkan password" value="" required><span class="eye" aria-hidden="true">👁</span></div></div>
-        </div>
-        <div class="col-stack">
-          <div><label for="telp">Nomor Telepon</label><div class="phone"><span class="pre">+62</span><input type="text" id="telp" name="telp" placeholder="Nomor telepon" value="" required></div></div>
-          <div class="stretch" style="flex:1"><label for="alamat">Alamat</label><textarea id="alamat" name="alamat" placeholder="Masukkan alamat pelanggan" required></textarea></div>
+    <a href="data-pelanggan.html" class="tp-back" aria-label="Kembali"><svg class="ic"><use href="#i-back"/></svg></a>
+
+    <form action="data-pelanggan.html" method="post">
+      <div class="tp-card">
+        <div class="tp-grid">
+          <div class="tp-col">
+            <div class="tp-field">
+              <label for="nama">Nama Pelanggan</label>
+              <input type="text" id="nama" name="nama" placeholder="Masukkan nama pelanggan" required>
+            </div>
+            <div class="tp-field">
+              <label for="telp">Nomor Telepon</label>
+              <div class="tp-phone"><span class="pre">+62</span><input type="text" id="telp" name="telp" placeholder="Nomor telepon" required></div>
+            </div>
+          </div>
+          <div class="tp-col">
+            <div class="tp-field">
+              <label for="alamat">Alamat</label>
+              <textarea id="alamat" name="alamat" placeholder="Masukkan alamat pelanggan" required></textarea>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="form-actions"><button type="submit" class="btn lg" style="background:var(--blue);color:#fff;font-weight:600">Simpan Data</button></div>
+      <div class="tp-actions"><button type="submit" class="tp-save">Simpan Data</button></div>
     </form>
   </main>
+
+  <!-- CARD LOGOUT -->
+  <div class="modal" id="modalLogout"><div class="card">
+    <h3>Logout</h3><p>Apakah anda yakin ingin logout?</p>
+    <div class="act"><a class="mbtn ghost" href="#">Batal</a><a class="mbtn" href="login.html">Logout</a></div>
+  </div></div>
 
 </body>
 </html>

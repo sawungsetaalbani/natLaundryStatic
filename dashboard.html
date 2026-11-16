@@ -6,66 +6,244 @@
   <title>Dashboard Admin - NAT Laundry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
-  <aside class="sidebar">
-    <div class="logo">NAT Laundry</div>
+  <!-- SPRITE IKON -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-dash" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 10h9.2L19 7H6.2"/><circle cx="9" cy="19" r="1.4"/><circle cx="16" cy="19" r="1.4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.2 2.8-5.2 6-5.2s6 2 6 5.2"/><path d="M16 5.5a3 3 0 010 5.6M18 14c2 .7 3 2.3 3 5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V5h6v2"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="12" rx="2"/><path d="M9 8V6a3 3 0 016 0v2"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 5h16l-6 7v6l-4 2v-8z"/></symbol>
+  </svg>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="logo">NAT Laundry</div>
+      <button type="button" class="hamburger" aria-label="Buka menu" aria-expanded="false"
+              onclick="this.setAttribute('aria-expanded', document.getElementById('sidebar').classList.toggle('open'))">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+          <line class="l1" x1="4" y1="6"  x2="20" y2="6"/>
+          <line class="l2" x1="4" y1="12" x2="20" y2="12"/>
+          <line class="l3" x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
     <nav>
-      <a href="dashboard.html" class="active">Dashboard</a>
-      <a href="data-pesanan.html">Data Pesanan</a>
-      <a href="data-pelanggan.html">Data Pelanggan</a>
-      <a href="data-layanan.html">Data Layanan</a>
-      <a href="data-jenis-layanan.html">Jenis Layanan</a>
-      <a href="laporan-transaksi.html">Laporan Transaksi</a>
+      <a href="dashboard.html" class="active"><svg class="ic"><use href="#i-dash"/></svg>Dashboard</a>
+      <a href="data-pesanan.html"><svg class="ic"><use href="#i-cart"/></svg>Data Pesanan</a>
+      <a href="data-pelanggan.html"><svg class="ic"><use href="#i-users"/></svg>Data Pelanggan</a>
+      <a href="data-layanan.html"><svg class="ic"><use href="#i-box"/></svg>Data Layanan</a>
+      <a href="data-jenis-layanan.html"><svg class="ic"><use href="#i-tag"/></svg>Jenis Layanan</a>
+      <a href="laporan-transaksi.html"><svg class="ic"><use href="#i-file"/></svg>Laporan Transaksi</a>
     </nav>
   </aside>
 
   <main class="content">
     <div class="topbar">
-      <h1>Dashboard Pendapatan</h1>
-      <div class="admin"><span class="av">👤</span><div><b>Nama Admin</b>Administrator</div></div>
+      <h1><b>Dashboard</b> Pendapatan</h1>
+      <!-- DROPDOWN PROFIL ADMIN -->
+      <details class="pf">
+        <summary class="admin"><span class="av">👤</span><div><b>Raditya Arya</b>Admin Laundry</div><svg class="ic chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="pf-card">
+          <div class="nm">Raditya Arya</div><div class="sub">Admin Laundry</div>
+          <a class="item" href="profil-admin.html">Profil saya</a>
+          <a class="mbtn block" href="#modalLogout">Logout</a>
+        </div>
+      </details>
     </div>
 
-    <section class="stats">
-      <div class="stat">
-        <small>Pesanan Hari Ini</small>
-        <div class="num">12</div>
-        <div class="bar"><i></i></div>
-        <div class="hint">Diproses hari ini</div>
+    <!-- KARTU STATISTIK -->
+    <section class="d-stats">
+      <div class="d-stat">
+        <span class="d-ico"><svg class="ic"><use href="#i-cart"/></svg></span>
+        <small>Pesanan Diproses</small>
+        <div class="d-num">12</div>
+        <div class="d-note">September 2026</div>
       </div>
-      <div class="stat"><small>Pelanggan Aktif</small><div class="num">24</div></div>
-      <div class="stat"><small>Pendapatan Bulan Ini</small><div class="num">Rp. 1.640.000</div></div>
-      <div class="stat"><small>Pendapatan Hari Ini</small><div class="num">Rp. 200.000</div></div>
+      <div class="d-stat">
+        <span class="d-ico"><svg class="ic"><use href="#i-users"/></svg></span>
+        <small>Pelanggan Aktif</small>
+        <div class="d-num">34</div>
+      </div>
+      <div class="d-stat">
+        <span class="d-ico"><svg class="ic"><use href="#i-bag"/></svg></span>
+        <small>Total Pendapatan</small>
+        <div class="d-num">Rp. 1.640.000</div>
+      </div>
+      <div class="d-stat">
+        <span class="d-ico"><svg class="ic"><use href="#i-bag"/></svg></span>
+        <small>Pendapatan / September</small>
+        <div class="d-num">Rp. 200.000</div>
+      </div>
     </section>
 
-    <section class="panels">
-      <div class="panel">
-        <div class="panel-head">
-          <span>Grafik Penjualan</span>
-          <form class="right" action="#" method="get">
-            <label for="periode">Periode</label>
-            <select id="periode" name="periode"><option selected>2026</option><option>2025</option></select>
-          </form>
+    <section class="d-grid">
+
+      <!-- GRAFIK PENJUALAN -->
+      <div class="d-panel d-sales">
+        <div class="d-head">
+          <div><div class="d-title">Grafik Penjualan</div><div class="d-sub">BULAN - 2026</div></div>
+          <a href="#modalFilterGrafik" class="d-filter"><svg class="ic"><use href="#i-filter"/></svg>Filter data</a>
         </div>
-        <div class="chart">
-          <div class="yaxis"><span>100</span><span>75</span><span>50</span><span>25</span><span>0</span></div>
-          <div class="plot"><div class="col"><i style="height:40%;background:#f4a6a6"></i><span>Jan</span></div><div class="col"><i style="height:55%;background:#f7c59f"></i><span>Feb</span></div><div class="col"><i style="height:75%;background:#f7e19f"></i><span>Mar</span></div><div class="col"><i style="height:95%;background:#b9e3a1"></i><span>Apr</span></div><div class="col"><i style="height:70%;background:#9fd8e8"></i><span>Mei</span></div><div class="col"><i style="height:60%;background:#a9b8f0"></i><span>Jun</span></div><div class="col"><i style="height:50%;background:#d1a9f0"></i><span>Jul</span></div><div class="col"><i style="height:85%;background:#f4a6a6"></i><span>Agu</span></div><div class="col"><i style="height:65%;background:#f7c59f"></i><span>Sep</span></div><div class="col"><i style="height:45%;background:#f7e19f"></i><span>Okt</span></div><div class="col"><i style="height:78%;background:#b9e3a1"></i><span>Nov</span></div><div class="col"><i style="height:58%;background:#9fd8e8"></i><span>Des</span></div></div>
+        <div class="d-chart">
+          <div class="d-y"><span>500K</span><span>400K</span><span>300K</span><span>200K</span><span>100K</span><span>50K</span><span>10K</span></div>
+          <div class="d-plot">
+            <div class="d-col"><i style="height:38%;background:#f4a6a6"></i><span>Jan</span></div>
+            <div class="d-col"><i style="height:55%;background:#f7e19f"></i><span>Feb</span></div>
+            <div class="d-col"><i style="height:38%;background:#b9e3a1"></i><span>Mar</span></div>
+            <div class="d-col"><i style="height:72%;background:#9fe0f0"></i><span>Apr</span></div>
+            <div class="d-col"><i style="height:90%;background:#a9b8f0"></i><span>Mei</span></div>
+            <div class="d-col"><i style="height:56%;background:#e4a9a9"></i><span>Jun</span></div>
+            <div class="d-col"><i style="height:66%;background:#e0b99a"></i><span>Jul</span></div>
+            <div class="d-col"><i style="height:30%;background:#9a9a9a"></i><span>Agust</span></div>
+            <div class="d-col"><i style="height:72%;background:#f7c59f"></i><span>Sep</span></div>
+            <div class="d-col"><i style="height:0"></i><span>Okt</span></div>
+            <div class="d-col"><i style="height:0"></i><span>Nov</span></div>
+            <div class="d-col"><i style="height:0"></i><span>Des</span></div>
+          </div>
         </div>
       </div>
 
-      <div class="panel">
-        <div class="panel-head"><span>Daftar Pesanan</span><a href="#" class="btn">Lihat Semua</a></div>
-        <table>
-          <tr><th>No</th><th>Pelanggan</th><th>Layanan</th><th>Status</th></tr>
-          <tr><td>1</td><td>Raditya Arya W.</td><td>Cuci Kering Setrika</td><td><span class="tag ok">Lunas</span></td></tr>
-          <tr><td>2</td><td>Dewi Lestari</td><td>Bedcover L</td><td><span class="tag ok">Lunas</span></td></tr>
-          <tr><td>3</td><td>Budi Santoso</td><td>Setrika Express</td><td><span class="tag no">Belum</span></td></tr>
+      <!-- DATA PESANAN -->
+      <div class="d-panel d-orders">
+        <div class="d-head">
+          <div><div class="d-title">Data Pesanan</div><div class="d-sub">DIPROSES</div></div>
+          <a href="data-pesanan.html" class="d-detail">Detail data</a>
+        </div>
+        <table class="d-table">
+          <thead><tr><th>No.</th><th>No. Pesanan</th><th>Pemesan</th></tr></thead>
+          <tbody>
+            <tr><td>1.</td><td>PS001</td><td><b>Agung Abadi</b><small>10/09/2026 XX:XX</small></td></tr>
+            <tr><td>2.</td><td>PS002</td><td><b>Sufo</b><small>10/09/2026 XX:XX</small></td></tr>
+            <tr><td>3.</td><td>PS003</td><td><b>Dwi Sri</b><small>10/09/2026 XX:XX</small></td></tr>
+          </tbody>
         </table>
       </div>
+
+      <!-- GRAFIK PERTUMBUHAN PELANGGAN -->
+      <div class="d-panel d-growth">
+        <div class="d-head">
+          <div><div class="d-title">Grafik Pertumbuhan Pelanggan</div><div class="d-sub">BERDASARKAN BULAN - 2026</div></div>
+          <a href="#modalFilterPelanggan" class="d-filter"><svg class="ic"><use href="#i-filter"/></svg>Filter data</a>
+        </div>
+        <div class="d-chart">
+          <div class="d-y"><span>500K</span><span>400K</span><span>300K</span><span>200K</span><span>100K</span><span>50K</span><span>10K</span></div>
+          <div class="d-plot">
+            <div class="d-col"><i style="height:85%;background:#b9e3a1"></i><span>Jan</span></div>
+            <div class="d-col"><i style="height:38%;background:#e4a9a9"></i><span>Feb</span></div>
+            <div class="d-col"><i style="height:45%;background:#f7e19f"></i><span>Mar</span></div>
+            <div class="d-col"><i style="height:35%;background:#f4a6a6"></i><span>Apr</span></div>
+            <div class="d-col"><i style="height:70%;background:#9fe0f0"></i><span>Mei</span></div>
+            <div class="d-col"><i style="height:80%;background:#f7e19f"></i><span>Jun</span></div>
+            <div class="d-col"><i style="height:65%;background:#9a9a9a"></i><span>Jul</span></div>
+            <div class="d-col"><i style="height:95%;background:#e0b99a"></i><span>Agust</span></div>
+            <div class="d-col"><i style="height:55%;background:#9fe0f0"></i><span>Sep</span></div>
+            <div class="d-col"><i style="height:0"></i><span>Okt</span></div>
+            <div class="d-col"><i style="height:0"></i><span>Nov</span></div>
+            <div class="d-col"><i style="height:0"></i><span>Des</span></div>
+          </div>
+        </div>
+      </div>
+
     </section>
   </main>
+
+  <!-- POPUP FILTERING DATA GRAFIK (Grafik Penjualan: tahunan / bulanan / mingguan) -->
+  <div class="fg-modal" id="modalFilterGrafik">
+    <a class="fg-close" href="#" aria-label="Tutup"></a>
+    <form class="fg-card" action="#" method="get">
+      <h3>Filtering Data Grafik</h3>
+
+      <span class="fg-label">Pilih Jenis Filtering</span>
+      <div class="fg-types">
+        <input type="radio" name="jenis" id="fg-tahunan" value="tahunan" checked>
+        <label for="fg-tahunan">TAHUNAN</label>
+        <input type="radio" name="jenis" id="fg-bulanan" value="bulanan">
+        <label for="fg-bulanan">BULANAN</label>
+        <input type="radio" name="jenis" id="fg-mingguan" value="mingguan">
+        <label for="fg-mingguan">MINGGUAN</label>
+      </div>
+
+      <hr class="fg-sep">
+
+      <!-- TAHUNAN: rentang tahun -->
+      <div class="fg-opt fg-tahunan">
+        <span class="fg-label">Rentang Tahun</span>
+        <div class="fg-row">
+          <select class="fg-select" name="tahun_dari" aria-label="Dari tahun">
+            <option>2022</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option>
+          </select>
+          <span class="sd">s.d</span>
+          <select class="fg-select" name="tahun_sampai" aria-label="Sampai tahun">
+            <option>2022</option><option>2023</option><option>2024</option><option>2025</option><option selected>2026</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- BULANAN: pilih tahun pendapatan -->
+      <div class="fg-opt fg-bulanan">
+        <span class="fg-label">Pilih tahun pendapatan</span>
+        <div class="fg-row">
+          <select class="fg-select" name="tahun" aria-label="Tahun pendapatan" style="flex:0 0 50%">
+            <option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- MINGGUAN: bulan + tahun -->
+      <div class="fg-opt fg-mingguan">
+        <span class="fg-label">Sesuaikan bulan dan tahun!</span>
+        <div class="fg-row">
+          <select class="fg-select" name="bulan" aria-label="Bulan">
+            <option>Januari</option><option>Februari</option><option>Maret</option><option>April</option>
+            <option>Mei</option><option>Juni</option><option>Juli</option><option>Agustus</option>
+            <option selected>September</option><option>Oktober</option><option>November</option><option>Desember</option>
+          </select>
+          <select class="fg-select" name="tahun_minggu" aria-label="Tahun">
+            <option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="fg-act">
+        <button type="reset" class="fg-btn ghost">Reset Filter ✕</button>
+        <button type="submit" class="fg-btn primary">Terapkan</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- POPUP FILTERING DATA GRAFIK PELANGGAN (hanya rentang tahun) -->
+  <div class="fg-modal" id="modalFilterPelanggan">
+    <a class="fg-close" href="#" aria-label="Tutup"></a>
+    <form class="fg-card" action="#" method="get">
+      <h3>Filtering Data Grafik</h3>
+
+      <span class="fg-label">Rentang Tahun</span>
+      <div class="fg-row">
+        <select class="fg-select" name="tahun_pelanggan" aria-label="Rentang tahun" style="flex:0 0 50%">
+          <option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option>
+        </select>
+      </div>
+
+      <div class="fg-act">
+        <button type="reset" class="fg-btn ghost">Reset Filter ✕</button>
+        <button type="submit" class="fg-btn primary">Terapkan</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- CARD LOGOUT -->
+  <div class="modal" id="modalLogout"><div class="card">
+    <h3>Logout</h3><p>Apakah anda yakin ingin logout?</p>
+    <div class="act"><a class="mbtn ghost" href="#">Batal</a><a class="mbtn" href="login.html">Logout</a></div>
+  </div></div>
 
 </body>
 </html>

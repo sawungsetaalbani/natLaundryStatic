@@ -7,11 +7,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="beranda.css">
+  <style>
+    /* ---- Tambahan sesuai Figma: Redeem Kode Pesanan, ikon judul, garis putus-putus ---- */
+    .redeem{text-align:center;padding:36px 0 40px;font-family:'Poppins',sans-serif}
+    .redeem h2{font-size:20px;font-weight:600;color:#2f5b94;margin:0}
+    .redeem h2 b{font-weight:700}
+    .redeem > p{font-size:10px;color:#4a86b8;margin:6px 0 22px}
+    .redeem-box{display:flex;align-items:center;justify-content:center;gap:12px;background:#2f5b94;
+      border-radius:14px;padding:22px 32px;max-width:520px;margin:0 auto}
+    .redeem-box input{flex:1;min-width:0;border:0;border-radius:8px;background:#fff;padding:0 16px;height:34px;
+      font:400 10px 'Poppins',sans-serif;color:#2f5b94}
+    .redeem-box input::placeholder{color:#9fb8dc}
+    .redeem-box input:focus{outline:2px solid #9fb8dc}
+    .redeem-box button{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:8px;cursor:pointer;
+      background:rgba(255,255,255,.18);color:#fff;padding:0 18px;height:34px;font:500 10px 'Poppins',sans-serif}
+    .redeem-box button:hover{background:rgba(255,255,255,.3)}
+    .redeem-box button svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+    .divider{border:0;border-top:2px dotted #c9d6e6;margin:0 0 8px}
+    .sec-head h2 .h-ic{width:20px;height:20px;margin-right:12px;vertical-align:-3px;fill:none;stroke:#2f5b94;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    @media (max-width:600px){.redeem-box{flex-direction:column;align-items:stretch;padding:18px}}
+  </style>
 </head>
 <body>
 
   <header class="navbar">
     <span class="logo">NAT Laundry</span>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Buka menu navigasi">
+    <label for="nav-toggle" class="hamburger" aria-hidden="true"><span></span><span></span><span></span></label>
     <nav>
       <a href="beranda.html">Beranda</a>
       <a href="layanan.html">Layanan</a>
@@ -32,10 +54,7 @@
         </div>
       </div>
       <div class="hero-art">
-        <!-- Ganti dengan gambar sendiri: <img src="img/hero.png" alt="Mesin cuci"> -->
-        <div class="hero-art">
-            <img src="Images/hero.png" alt="Mesin cuci">
-        </div>
+        <img src="Images/hero.png" alt="Mesin cuci">
       </div>
     </section>
 
@@ -48,11 +67,25 @@
       <div class="feature"><i>🚚</i> Free Delivery<br>Radius 3km</div>
     </section>
 
+    <!-- REDEEM KODE PESANAN -->
+    <section class="redeem" id="redeem">
+      <h2><b>Redeem</b> Kode Pesanan</h2>
+      <p>Masukkan kode dan pantau status cucian laundry anda dengan mudah!</p>
+      <form class="redeem-box" action="#" method="get">
+        <input type="text" name="kode" placeholder="Input kode pesanan disini" aria-label="Kode pesanan" required>
+        <button type="submit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/></svg>Redeem
+        </button>
+      </form>
+    </section>
+
+    <hr class="divider">
+
     <!-- LAYANAN + CRUD -->
     <section id="layanan">
       <div class="sec-head">
         <div>
-          <h2>Layanan Kami</h2>
+          <h2><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V5h6v2"/></svg>Layanan Kami</h2>
           <p>Banyak pilihan, sesuaikan dengan kebutuhan anda!</p>
         </div>
         <div class="sec-actions">
@@ -79,7 +112,7 @@
     <section id="alur">
       <div class="sec-head">
         <div>
-          <h2>Alur Cara Kerja</h2>
+          <h2><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></svg>Alur Cara Kerja</h2>
           <p>Pengecekan mudah dan lebih aman!</p>
         </div>
       </div>
