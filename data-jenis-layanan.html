@@ -46,9 +46,11 @@
       <a href="laporan-transaksi.html"><svg class="ic"><use href="#i-file"/></svg>Laporan Transaksi</a>
     </nav>
   </aside>
+  <label for="toggle-sidebar" class="overlay"></label>
 
   <main class="content">
     <div class="topbar">
+      <label for="toggle-sidebar" class="menu-toggle" aria-label="Buka menu"><i data-lucide="menu"></i></label>
       <h1><b>Jenis</b> Layanan</h1>
       <!-- DROPDOWN PROFIL ADMIN -->
       <details class="pf">
@@ -64,9 +66,9 @@
     <div class="split">
       <form class="add-card" action="#" method="post">
         <h2>Tambah Layanan</h2>
-        <label for="jenis">Jenis Layanan</label>
+        <p>Jenis Layanan</p>
         <input type="text" id="jenis" name="jenis" placeholder="Masukkan jenis layanan laundry" required>
-        <div class="btn-row"><button type="submit" class="btn">+ &nbsp;Simpan Data</button></div>
+        <div class="btn-row"><button type="submit" class="btn lg"><i data-lucide="plus"></i>Simpan Data</button></div>
       </form>
 
       <div>
@@ -99,6 +101,36 @@
           </table>
         </section>
       </div>
+    </div>
+    <input type="checkbox" id="open-edit" hidden>
+    <div class="edit-overlay">
+        <label for="open-edit" class="edit-backdrop"></label>
+
+        <div class="edit-popup">
+            <div class="edit-head">
+                <h2>Ubah Data Layanan</h2>
+                <label for="open-edit" class="edit-close" aria-label="Tutup">
+                    <i data-lucide="x"></i>
+                </label>
+            </div>
+
+            <form action="#" method="post">
+                <div class="edit-preview">
+                    <label>Jenis Layanan Sebelumnya</label>
+                    <label style="font-weight: 600; font-size: 18px;">Cuci Kiloan</label>
+                </div>
+                <div class="filter-divider"></div>
+                <div class="edit-field">
+                    <label for="jenis-baru">Jenis Layanan Baru</label>
+                    <input type="text" id="jenis-baru" name="jenis_baru"
+                        placeholder="Masukkan jenis layanan baru" required>
+                </div>
+
+                <div class="edit-actions">
+                    <button type="submit" class="btn lg">Ubah Data</button>
+                </div>
+            </form>
+        </div>
     </div>
   </main>
 

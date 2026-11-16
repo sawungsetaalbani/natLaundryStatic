@@ -6,7 +6,7 @@
   <title>Login - NAT Laundry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="wrapper">
@@ -29,7 +29,7 @@
         <div class="input-wrap">
           <input type="password" id="password" name="password" placeholder="Masukkan password anda" required>
           <span class="toggle" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            <i data-lucide="eye"></i>
           </span>
         </div>
       </div>
@@ -38,5 +38,11 @@
       <p class="foot">Belum memiliki akun? <a href="register.html">Register</a></p>
     </form>
   </div>
+
+  <!-- ICON LUCIDE -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

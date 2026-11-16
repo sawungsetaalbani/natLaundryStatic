@@ -66,9 +66,11 @@
       <a href="laporan-transaksi.html"><svg class="ic"><use href="#i-file"/></svg>Laporan Transaksi</a>
     </nav>
   </aside>
+  <label for="toggle-sidebar" class="overlay"></label>
 
   <main class="content">
     <div class="topbar">
+      <label for="toggle-sidebar" class="menu-toggle" aria-label="Buka menu"><i data-lucide="menu"></i></label>
       <h1><b>Tambah</b> Pesanan</h1>
       <!-- DROPDOWN PROFIL ADMIN -->
       <details class="pf">
@@ -90,6 +92,7 @@
 
     <form class="card form-card" action="#" method="post">
       <div class="status-line">STATUS PESANAN <b>DIPROSES</b></div>
+
       <div class="fgrid">
         <div>
           <label for="pelanggan">Nama Pelanggan</label>
@@ -125,7 +128,10 @@
           <div class="price-box"><small>Harga Satuan</small><b>Rp. -</b></div>
         </div>
       </div>
-      <button type="button" class="btn lg" style="background:var(--blue);color:#fff;font-weight:600">Simpan Layanan</button>
+
+      <button type="button" class="btn lg save-service">
+        <i data-lucide="plus"></i>Simpan Layanan
+      </button>
 
       <div class="section-title">LIST PESANAN LAUNDRY</div>
       <div class="table-wrap">

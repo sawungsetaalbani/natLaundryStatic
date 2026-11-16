@@ -6,16 +6,20 @@
   <title>Registrasi Akun - NAT Laundry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="wrapper wide">
-    <a href="login.html" class="back" aria-label="Kembali">&#8249;</a>
-    <div class="header">
-      <div>
-        <small>Lengkapi data,</small>
-        <h1>Registrasi Akun</h1>
-      </div>
+    <div class="register-heading">
+        <a href="login.html" class="back" aria-label="Kembali">
+            <i data-lucide="chevron-left"></i>
+        </a>
+        <div class="header">
+            <div>
+                <small>Lengkapi data,</small>
+                <h1>Registrasi Akun</h1>
+            </div>
+        </div>
     </div>
 
     <form class="card" action="#" method="post">
@@ -38,7 +42,7 @@
           <div class="input-wrap">
             <input type="password" id="password" name="password" placeholder="Masukkan password" required>
             <span class="toggle" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+              <i data-lucide="eye"></i>
             </span>
           </div>
         </div>
@@ -51,7 +55,14 @@
           <button type="submit" class="btn">Daftar Akun</button>
         </div>
       </div>
+      <p class="foot">Sudah memiliki akun? <a href="login.html">Login</a></p>
     </form>
   </div>
+
+  <!-- ICON LUCIDE -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

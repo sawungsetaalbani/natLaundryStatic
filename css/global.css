@@ -1,0 +1,297 @@
+
+/* =========================
+   PENGATURAN DASAR
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #315B8C;
+    --sky: #4D8DBA;
+    --soft: #d5dfeb;
+    --line: #cfd9e6;
+    --danger: #c0392b;
+    --join-bg: #C2D0E7;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    color: var(--blue);
+    background: #fff;
+    font-size: 14px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+main {
+    flex: 1;
+    padding-bottom: 48px;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: calc(100% - 48px);
+    max-width: 1000px;
+    min-height: 54px;
+    margin: 20px auto 0;
+    padding: 12px 26px;
+    border: 1px solid var(--line);
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 12px;
+    background: #fff;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(49, 91, 140, 0.05);
+}
+
+.navbar .logo {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--blue);
+    white-space: nowrap;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    color: var(--sky);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.navbar nav a {
+    transition: color 0.2s ease;
+}
+
+.btn-login {
+    padding: 8px 34px;
+    border-radius: 20px;
+    background: var(--sky);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.btn-login:hover {
+    background: var(--blue);
+}
+
+
+/* =========================
+   HAMBURGER MENU
+========================= */
+
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    width: 100%;
+    padding: 24px 16px;
+    background: var(--blue);
+    color: #fff;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+footer b {
+    font-weight: 600;
+}
+
+/* NAVBAR PELANGGAN */
+.profile-menu { position: relative; }
+.profile-toggle { display: none; }
+.profile-trigger { display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--blue); font-size: 13px; font-weight: 500; white-space: nowrap; }
+.profile-trigger svg { width: 16px; height: 16px; }
+.profile-arrow { transition: transform .2s ease; }
+.profile-toggle:checked + .profile-trigger .profile-arrow { transform: rotate(180deg); }
+.profile-dropdown { display: none; position: absolute; top: calc(100% + 12px); right: 0; width: 280px; padding: 16px; background: #fff; border: 1px solid var(--sky); border-radius: 12px; box-shadow: 0 5px 15px rgba(49,91,140,.12); z-index: 200; }
+.profile-toggle:checked ~ .profile-dropdown { display: block; }
+.profile-name { font-size: 13px; font-weight: 600; color: var(--blue);}
+.profile-phone { display: block; margin-top: 4px; color: var(--blue); font-size: 11px; margin-bottom: 30px;}
+.profile-dropdown hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
+.profile-dropdown .logout-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--sky); color: #fff; }
+.profile-dropdown .logout-btn svg { width: 15px; height: 15px; }
+
+@media (max-width: 768px) {
+    .profile-menu { width: 80%; }
+    .profile-trigger { justify-content: center; }
+    .profile-dropdown { position: relative; top: auto; width: 100%; margin-top: 12px; }
+    .menu-toggle:checked ~ nav:has(.profile-toggle:checked) { max-height: 420px; }
+}
+
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 1024px) {
+    .navbar {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .navbar nav {
+        gap: 24px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        width: calc(100% - 40px);
+        margin-top: 16px;
+        padding: 12px 20px;
+        border-radius: 28px;
+    }
+
+    .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 26px;
+        height: 19px;
+        flex-shrink: 0;
+        cursor: pointer;
+        z-index: 102;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 26px;
+        height: 2.5px;
+        background: var(--blue);
+        border-radius: 3px;
+        transition: 0.3s ease;
+    }
+
+    .navbar nav {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        padding: 0;
+        background: #fff;
+        border: none;
+        border-radius: 16px;
+        box-shadow: none;
+        transition: max-height .3s ease, padding .3s ease;
+    }
+
+    .navbar nav a {
+        width: 80%;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .navbar nav .btn-login {
+        width: 80%;
+    }
+
+    /* Menu terbuka */
+    .menu-toggle:checked ~ nav {
+        max-height: 260px;
+        padding: 20px 0;
+        border: 1px solid var(--line);
+        box-shadow: 0 8px 16px rgba(49,91,140,.1);
+    }
+
+    /* Animasi hamburger menjadi X */
+    .menu-toggle:checked ~ .hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked ~ .hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE HP KECIL
+========================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        width: calc(100% - 32px);
+        margin-top: 14px;
+        padding: 11px 18px;
+    }
+
+    .navbar .logo {
+        font-size: 15px;
+    }
+
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    footer {
+        padding: 20px 12px;
+    }
+}
