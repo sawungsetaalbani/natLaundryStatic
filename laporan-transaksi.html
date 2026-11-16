@@ -19,6 +19,9 @@
     <symbol id="i-tag" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></symbol>
     <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
   </svg>
 
   <aside class="sidebar" id="sidebar">
@@ -36,18 +39,16 @@
 
     <nav>
       <a href="dashboard.html"><svg class="ic"><use href="#i-dash"/></svg>Dashboard</a>
-      <a href="data-pesanan.html" ><svg class="ic"><use href="#i-cart"/></svg>Data Pesanan</a>
+      <a href="data-pesanan.html"><svg class="ic"><use href="#i-cart"/></svg>Data Pesanan</a>
       <a href="data-pelanggan.html"><svg class="ic"><use href="#i-users"/></svg>Data Pelanggan</a>
       <a href="data-layanan.html"><svg class="ic"><use href="#i-box"/></svg>Data Layanan</a>
       <a href="data-jenis-layanan.html"><svg class="ic"><use href="#i-tag"/></svg>Jenis Layanan</a>
       <a href="laporan-transaksi.html" class="active"><svg class="ic"><use href="#i-file"/></svg>Laporan Transaksi</a>
     </nav>
   </aside>
-  <label for="toggle-sidebar" class="overlay"></label>
 
   <main class="content">
     <div class="topbar">
-      <label for="toggle-sidebar" class="menu-toggle" aria-label="Buka menu"><i data-lucide="menu"></i></label>
       <h1><b>Laporan</b> Transaksi</h1>
       <!-- DROPDOWN PROFIL ADMIN -->
       <details class="pf">
@@ -78,7 +79,7 @@
         <div class="lbl">Total Data</div>
         <div class="big">4 transaksi</div>
       </div>
-      <a href="#" class="btn lg"><i data-lucide="arrow-down-to-line"></i>Export PDF</a>
+      <a href="#" class="btn lg"><svg class="ic" style="vertical-align:-2px;margin-right:6px"><use href="#i-down"/></svg>Export PDF</a>
     </section>
 
     <div class="bar-row">
@@ -90,8 +91,8 @@
         <span>Halaman <b>1</b> dari <b>3</b></span>
         <label for="per" style="margin:0;font-weight:400; font-size:12px;">Item per halaman</label>
         <select id="per" name="per"><option selected>5</option><option>10</option><option>20</option></select>
-        <a class="back" href="#" aria-label="Sebelumnya"><i data-lucide="chevron-left"></i></a>
-        <a class="back" href="#" aria-label="Selanjutnya"><i data-lucide="chevron-right"></i></a>
+        <a class="back" style="margin-bottom:0" href="#" aria-label="Sebelumnya"><svg class="ic"><use href="#i-left"/></svg></a>
+        <a class="back" style="margin-bottom:0" href="#" aria-label="Selanjutnya"><svg class="ic"><use href="#i-right"/></svg></a>
       </div>
     </div>
 
