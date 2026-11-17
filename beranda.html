@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="beranda.css">
   <style>
-    /* ---- Tambahan sesuai Figma: Redeem Kode Pesanan, ikon judul, garis putus-putus ---- */
+    /* ---- Redeem Kode Pesanan + garis putus-putus ---- */
     .redeem{text-align:center;padding:36px 0 40px;font-family:'Poppins',sans-serif}
     .redeem h2{font-size:20px;font-weight:600;color:#2f5b94;margin:0}
     .redeem h2 b{font-weight:700}
@@ -24,8 +24,28 @@
     .redeem-box button:hover{background:rgba(255,255,255,.3)}
     .redeem-box button svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
     .divider{border:0;border-top:2px dotted #c9d6e6;margin:0 0 8px}
-    .sec-head h2 .h-ic{width:20px;height:20px;margin-right:12px;vertical-align:-3px;fill:none;stroke:#2f5b94;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
     @media (max-width:600px){.redeem-box{flex-direction:column;align-items:stretch;padding:18px}}
+
+    /* ---- Ikon gambar judul "Layanan Kami" & "Alur Cara Kerja" ---- */
+    .sec-title{display:flex;align-items:center;gap:14px}
+    .sec-title img{display:block;width:36px;height:36px;object-fit:contain;flex:none}
+    .sec-title h2{margin:0}
+
+    /* ---- Ikon lucide (hero, fitur, tombol, kontak) ---- */
+    .btn svg{width:14px;height:14px;margin-left:6px;vertical-align:-2px}
+    .join-link{display:inline-flex;align-items:center;gap:10px;font-size:12px}
+    .join-icon{width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--blue);display:inline-flex;align-items:center;justify-content:center}
+    .join-icon svg{width:14px;height:14px}
+    .feature svg{width:22px;height:22px;flex:none;color:var(--blue)}
+    .contact .ic svg,.address > span svg{width:18px;height:18px}
+    .address > span{color:var(--blue);display:flex;flex:none}
+
+    /* ---- Bagian Kunjungi Kami (dua kolom) ---- */
+    .visit-col-left{display:flex;flex-direction:column;gap:16px}
+    .visit-col-left h2{font-size:20px;font-weight:600}
+    .visit-col-left p{font-size:11px;margin-top:2px}
+    .visit-col-left .contact{margin-top:0}
+    .visit-col-right .address{margin-top:12px}
   </style>
 </head>
 <body>
@@ -45,10 +65,15 @@
     <section class="hero">
       <div>
         <h1><b>Cucian Lebih Higienis,</b> Rapi Sempurna Tanpa Khawatir.</h1>
-        <p>Pencucian khusus tanpa dicampur dengan sertiko lain yang aman untuk segala jenis pakaian. Pakaian awet, rapi, dan wangi sepanjang hari.</p>
+        <p style="color: #4D8DBA;">
+          Pencucian khusus tanpa dicampur dengan sertiko lain yang aman untuk segala jenis pakaian. Pakaian awet, rapi, dan wangi sepanjang hari.
+        </p>
         <div class="hero-actions">
           <a href="layanan.html" class="btn">Lihat Layanan</a>
-          <span>💬 &nbsp;Gabung sekarang!</span>
+          <a href="login.html" class="join-link">
+            <span>Gabung sekarang!</span>
+            <span class="join-icon"><i data-lucide="arrow-down-right"></i></span>
+          </a>
         </div>
       </div>
       <div class="hero-art">
@@ -58,92 +83,156 @@
 
     <!-- FITUR -->
     <section class="features">
-      <div class="feature"><i>🧺</i> 1 Mesin<br>1 Pelanggan</div>
-      <div class="feature"><i>🧼</i> Request Cuci<br>Manual</div>
-      <div class="feature"><i>🧴</i> Menggunakan<br>Setrika Uap</div>
-      <div class="feature"><i>👕</i> Pakaian Rapi<br>&amp; Wangi</div>
-      <div class="feature"><i>🚚</i> Free Delivery<br>Radius 3km</div>
+      <div class="feature">
+        <i data-lucide="washing-machine"></i>
+        <span>1 Mesin<br>1 Pelanggan</span>
+      </div>
+      <div class="feature">
+        <i data-lucide="hand"></i>
+        <span>Request Cuci<br>Manual</span>
+      </div>
+      <div class="feature">
+        <i data-lucide="wind"></i>
+        <span>Menggunakan<br>Setrika Uap</span>
+      </div>
+      <div class="feature">
+        <i data-lucide="shirt"></i>
+        <span>Pakaian Rapi<br>&amp; Wangi</span>
+      </div>
+      <div class="feature">
+        <i data-lucide="truck"></i>
+        <span>Free Delivery<br>Radius 3km</span>
+      </div>
     </section>
 
     <!-- REDEEM KODE PESANAN -->
     <section class="redeem" id="redeem">
-        <h2><b>Redeem</b> Kode Pesanan</h2>
-        <p>Masukkan kode dan pantau status cucian laundry anda dengan mudah!</p>
-        <form class="redeem-box" action="pesanan.html" method="get">
-            <input type="text" name="kode" placeholder="Input kode pesanan disini" aria-label="Kode pesanan" required>
-            <button type="submit">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/></svg>Redeem
-            </button>
-        </form>
+      <h2><b>Redeem</b> Kode Pesanan</h2>
+      <p>Masukkan kode dan pantau status cucian laundry anda dengan mudah!</p>
+      <form class="redeem-box" action="pesanan.html" method="get">
+        <input type="text" name="kode" placeholder="Input kode pesanan disini" aria-label="Kode pesanan" required>
+        <button type="submit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/></svg>Redeem
+        </button>
+      </form>
     </section>
 
     <hr class="divider">
 
-    <!-- LAYANAN + CRUD -->
+    <!-- LAYANAN -->
     <section id="layanan">
       <div class="sec-head">
-        <div>
-          <h2><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V5h6v2"/></svg>Layanan Kami</h2>
-          <p>Banyak pilihan, sesuaikan dengan kebutuhan anda!</p>
+        <div class="sec-title">
+          <img src="Images/layananicon.png" alt="Ikon layanan">
+          <div>
+            <h2>Layanan Kami</h2>
+            <p>Banyak pilihan, sesuaikan dengan kebutuhan anda!</p>
+          </div>
         </div>
         <div class="sec-actions">
-          <a href="layanan.html" class="btn">Detail Layanan</a>
+          <a href="layanan.html" class="btn">
+            Detail Layanan
+            <i data-lucide="arrow-up-right"></i>
+          </a>
         </div>
       </div>
+
       <div class="cards">
         <div class="service">
           <h3>Cuci Kiloan</h3>
-          <ul><li>Regular 3 x 24 jam</li><li>Express 1 x 24 jam</li></ul>
+          <ul>
+            <li>Regular 3 x 24 jam</li>
+            <li>Express 1 x 24 jam</li>
+          </ul>
         </div>
         <div class="service">
           <h3>Cuci Satuan</h3>
-          <ul><li>Regular 3 x 24 jam</li></ul>
+          <ul>
+            <li>Regular 3 x 24 jam</li>
+          </ul>
         </div>
         <div class="service">
           <h3>Cuci Manual</h3>
-          <ul><li>Regular 3 x 24 jam</li></ul>
+          <ul>
+            <li>Regular 3 x 24 jam</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- ALUR -->
+    <!-- ALUR CARA KERJA -->
     <section id="alur">
       <div class="sec-head">
-        <div>
-          <h2><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></svg>Alur Cara Kerja</h2>
-          <p>Pengecekan mudah dan lebih aman!</p>
+        <div class="sec-title">
+          <img src="Images/alur.png" alt="Ikon alur">
+          <div>
+            <h2>Alur Cara Kerja</h2>
+            <p>Pengecekan mudah dan lebih aman!</p>
+          </div>
         </div>
       </div>
       <div class="steps">
-        <div class="step"><div class="pic"><img src="Images/Fresh Laundry Counter Exchange.png" alt=""></div><div class="txt"><h4>Datang &amp; Serahkan Pakaian</h4><p>Bawa pakaian kotor anda langsung ke outlet kami. Kami akan cek dan timbang pakaian anda.</p></div></div>
+        <div class="step">
+          <div class="pic"><img src="Images/Fresh Laundry Counter Exchange.png" alt="Serahkan pakaian di outlet"></div>
+          <div class="txt">
+            <h4>Datang &amp; Serahkan Pakaian</h4>
+            <p>Bawa pakaian kotor anda langsung ke outlet kami. Kami akan cek dan timbang pakaian anda.</p>
+          </div>
+        </div>
         <span class="arrow">→</span>
-        <div class="step"><div class="pic"><img src="Images/RegistrasidanLogin.png" alt=""></div><div class="txt"><h4>Registrasi &amp; Login</h4><p>Lakukan registrasi agar pesanan terpantau dan data Anda tersimpan di sistem.</p></div></div>
+        <div class="step">
+          <div class="pic"><img src="Images/RegistrasidanLogin.png" alt="Registrasi dan login"></div>
+          <div class="txt">
+            <h4>Registrasi &amp; Login</h4>
+            <p>Lakukan registrasi agar pesanan dapat anda pantau dengan mudah dan lakukan login.</p>
+          </div>
+        </div>
         <span class="arrow">→</span>
-        <div class="step"><div class="pic"><img src="Images/PantauViaWeb.png" alt=""></div><div class="txt"><h4>Pantau via Web</h4><p>Cek status cucian melalui website kapan saja, di mana pun anda berada.</p></div></div>
+        <div class="step">
+          <div class="pic"><img src="Images/PantauViaWeb.png" alt="Pantau pesanan lewat web"></div>
+          <div class="txt">
+            <h4>Pantau via Web</h4>
+            <p>Cek status cucian melalui website kapan saja, di mana pun anda berada.</p>
+          </div>
+        </div>
         <span class="arrow">→</span>
-        <div class="step"><div class="pic"><img src="Images/AmbilPakaian.png" alt=""></div><div class="txt"><h4>Ambil Pakaian Rapi &amp; Wangi</h4><p>Ambil cucian bersih di outlet atau gunakan layanan antar gratis.</p></div></div>
+        <div class="step">
+          <div class="pic"><img src="Images/AmbilPakaian.png" alt="Ambil pakaian"></div>
+          <div class="txt">
+            <h4>Ambil Pakaian Rapi &amp; Wangi</h4>
+            <p>Saat status "Selesai", Anda bisa langsung mengambil pakaian yang sudah rapi dan harum.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- KUNJUNGI KAMI -->
     <section class="visit">
-      <h2>Kunjungi Kami</h2>
-      <p>Informasi kontak dan alamat laundry</p>
       <div class="visit-grid">
-        <div>
+        <div class="visit-col-left">
+          <div>
+            <h2>Kunjungi Kami</h2>
+            <p>Informasi kontak dan alamat laundry</p>
+          </div>
           <div class="box">
-            <div class="hours-title">Jam Operasional</div>
+            <div style="font-size: 12px; font-weight: 500;">Jam Operasional</div>
             <div class="hours">
-              <span>Senin - Sabtu</span><span>08:00 - 18:00</span>
-              <span>Minggu</span><span>Tutup</span>
+              <span>Senin - Sabtu</span>
+              <span>08:00 - 18:00</span>
+              <span>Minggu</span>
+              <span style="color: #8C3131;">Tutup</span>
             </div>
           </div>
           <div class="contact">
-            <span class="ic">📞</span>
-            <div>Kontak<br><b>081234567812</b></div>
+            <span class="ic"><i data-lucide="phone"></i></span>
+            <div>
+              Kontak<br>
+              <b style="font-size: 15px; font-weight: 600;">0813-8251-8435</b>
+            </div>
           </div>
         </div>
-        <div>
+
+        <div class="visit-col-right">
           <div class="map">
             <iframe
               src="https://maps.google.com/maps?q=-7.9146412,112.6340265&z=17&output=embed"
@@ -153,253 +242,43 @@
               title="Lokasi NAT Laundryshop"></iframe>
           </div>
           <div class="box address">
-            <span>📍</span>
-            <div>
-                <h1><b>Cucian Lebih Higienis,</b> Rapi Sempurna Tanpa Khawatir.</h1>
-                <p style="color: #4D8DBA;">
-                    Pencucian khusus tanpa dicampur dengan sertiko lain yang aman untuk segala jenis pakaian. Pakaian awet, rapi, dan wangi sepanjang hari.
-                </p>
-                <div class="hero-actions">
-                    <a href="layanan.html" class="btn">Lihat Layanan</a>
-
-                    <a href="login.html" class="join-link">
-                        <span>Gabung sekarang!</span>
-                        <span class="join-icon">
-                            <i data-lucide="arrow-down-right"></i>
-                        </span>
-                    </a>
-                </div>
+            <span><i data-lucide="map-pin"></i></span>
+            <div style="font-size: 12px;">
+              <b>Alamat</b><br>
+              Gemurung, Tanjungtirto, Kec. Singosari, Kabupaten Malang, Jawa Timur 65153, Indonesia
             </div>
-
-            <div class="hero-art">
-                <img src="Images/hero.png" alt="Mesin cuci">
-            </div>
-        </section>
-
-        <!-- FITUR -->
-        <section class="features">
-            <div class="feature">
-                <i data-lucide="washing-machine"></i>
-                <span>1 Mesin<br>1 Pelanggan</span>
-            </div>
-            <div class="feature">
-                <i data-lucide="hand"></i>
-                <span>Request Cuci<br>Manual</span>
-            </div>
-            <div class="feature">
-                <i data-lucide="wind"></i>
-                <span>Menggunakan<br>Setrika Uap</span>
-            </div>
-            <div class="feature">
-                <i data-lucide="shirt"></i>
-                <span>Pakaian Rapi<br>& Wangi</span>
-            </div>
-            <div class="feature">
-                <i data-lucide="truck"></i>
-                <span>Free Delivery<br>Radius 3km</span>
-            </div>
-        </section>
-
-        <!-- LAYANAN -->
-        <section id="layanan">
-            <div class="sec-head">
-                <div class="sec-title">
-                    <img src="Images/layananicon.png" alt="Ikon layanan">
-
-                    <div>
-                        <h2>Layanan Kami</h2>
-                        <p>Banyak pilihan, sesuaikan dengan kebutuhan anda!</p>
-                    </div>
-                </div>
-
-                <div class="sec-actions">
-                    <a href="layanan.html" class="btn">
-                        Detail Layanan
-                        <i data-lucide="arrow-up-right"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="cards">
-                <div class="service">
-                    <h3>Cuci Kiloan</h3>
-                    <ul>
-                        <li>Regular 3 x 24 jam</li>
-                        <li>Express 1 x 24 jam</li>
-                    </ul>
-                </div>
-                <div class="service">
-                    <h3>Cuci Satuan</h3>
-                    <ul>
-                        <li>Regular 3 x 24 jam</li>
-                    </ul>
-                </div>
-                <div class="service">
-                    <h3>Cuci Manual</h3>
-                    <ul>
-                        <li>Regular 3 x 24 jam</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ALUR LAUNDRY -->
-        <section id="alur">
-            <div class="sec-head">
-                <div class="sec-title">
-                    <img src="Images/alur.png" alt="Ikon alur">
-                    <div>
-                        <h2>Alur Cara Kerja</h2>
-                        <p>Pengecekan mudah dan lebih aman!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="pic">
-                        <img src="Images/Fresh Laundry Counter Exchange.png" alt="">
-                    </div>
-                    <div class="txt">
-                        <h4>Datang & Serahkan Pakaian</h4>
-                        <p>Bawa pakaian kotor anda langsung ke outlet kami. Kami akan cek dan timbang pakaian anda.</p>
-                    </div>
-                </div>
-                <span class="arrow">→</span>
-                <div class="step">
-                    <div class="pic">
-                        <img src="Images/RegistrasidanLogin.png" alt="">
-                    </div>
-                    <div class="txt">
-                        <h4>Registrasi & Login</h4>
-                        <p>Lakukan registrasi agar pesanan dapat anda pantau dengan mudah dan lakukan login.</p>
-                    </div>
-                </div>
-                <span class="arrow">→</span>
-                <div class="step">
-                    <div class="pic">
-                        <img src="Images/PantauViaWeb.png" alt="">
-                    </div>
-                    <div class="txt">
-                        <h4>Pantau via Web</h4>
-                        <p>Cek status cucian melalui website kapan saja, di mana pun anda berada.</p>
-                    </div>
-                </div>
-                <span class="arrow">→</span>
-                <div class="step">
-                    <div class="pic">
-                        <img src="Images/AmbilPakaian.png" alt="">
-                    </div>
-
-                    <div class="txt">
-                        <h4>Ambil Pakaian Rapi & Wangi</h4>
-                        <p>Saat status "Selesai", Anda bisa langsung mengambil pakaian yang sudah rapi dan harum.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- KUNJUNGI KAMI -->
-        <section class="visit">
-            <div class="visit-grid">
-                <div class="visit-col-left">
-                    <div>
-                        <h2>Kunjungi Kami</h2>
-                        <p>Informasi kontak dan alamat laundry</p>
-                    </div>
-                    <div class="box">
-                        <div style="font-size: 12px; font-weight: 500;">
-                            Jam Operasional
-                        </div>
-                        <div class="hours">
-                            <span>Senin - Sabtu</span>
-                            <span>08:00 - 18:00</span>
-                            <span>Minggu</span>
-                            <span style="color: #8C3131;">Tutup</span>
-                        </div>
-                    </div>
-
-                    <div class="contact">
-                        <span class="ic">
-                            <i data-lucide="phone"></i>
-                        </span>
-                        <div>
-                            Kontak<br>
-                            <b style="font-size: 15px; font-weight: 600;">0813-8251-8435</b>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KOLOM KANAN -->
-                <div class="visit-col-right">
-                    <div class="map">
-                        <iframe
-                            src="https://maps.google.com/maps?q=-7.9146412,112.6340265&z=17&output=embed"
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            allowfullscreen
-                            title="Lokasi NAT Laundryshop">
-                        </iframe>
-                    </div>
-                    <div class="box address">
-                        <span><i data-lucide="map-pin"></i></span>
-                        <div style="font-size: 12px;">
-                            <b>Alamat</b><br>
-                            Gemurung, Tanjungtirto, Kec. Singosari, Kabupaten Malang, Jawa Timur 65153, Indonesia
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <b>NAT Laundry | <i>Pakaian Wangi ya NAT Laundry Solusinya</i></b><br>
-        Dikembangkan oleh Tim Capstone 2026
-    </footer>
-
-    <!-- MODAL DETAIL LAYANAN -->
-    <div class="modal" id="detail">
-        <a href="#layanan" class="modal-bg" aria-label="Tutup"></a>
-        <div class="modal-box">
-            <h3>Detail Layanan</h3>
-            <table>
-                <tr>
-                    <th>Layanan</th>
-                    <th>Paket</th>
-                    <th>Estimasi</th>
-                </tr>
-                <tr>
-                    <td>Cuci Kiloan</td>
-                    <td>Regular</td>
-                    <td>3 x 24 jam</td>
-                </tr>
-                <tr>
-                    <td>Cuci Kiloan</td>
-                    <td>Express</td>
-                    <td>1 x 24 jam</td>
-                </tr>
-                <tr>
-                    <td>Cuci Satuan</td>
-                    <td>Regular</td>
-                    <td>3 x 24 jam</td>
-                </tr>
-                <tr>
-                    <td>Cuci Manual</td>
-                    <td>Regular</td>
-                    <td>3 x 24 jam</td>
-                </tr>
-            </table>
-            <div class="row">
-                <a href="#layanan" class="btn">Tutup</a>
-            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
+  </main>
 
-    <!-- ICON LUCIDE -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+  <!-- FOOTER -->
+  <footer>
+    <b>NAT Laundry | <i>Pakaian Wangi ya NAT Laundry Solusinya</i></b><br>
+    Dikembangkan oleh Tim Capstone 2026
+  </footer>
+
+  <!-- MODAL DETAIL LAYANAN -->
+  <div class="modal" id="detail">
+    <a href="#layanan" class="modal-bg" aria-label="Tutup"></a>
+    <div class="modal-box">
+      <h3>Detail Layanan</h3>
+      <table>
+        <tr><th>Layanan</th><th>Paket</th><th>Estimasi</th></tr>
+        <tr><td>Cuci Kiloan</td><td>Regular</td><td>3 x 24 jam</td></tr>
+        <tr><td>Cuci Kiloan</td><td>Express</td><td>1 x 24 jam</td></tr>
+        <tr><td>Cuci Satuan</td><td>Regular</td><td>3 x 24 jam</td></tr>
+        <tr><td>Cuci Manual</td><td>Regular</td><td>3 x 24 jam</td></tr>
+      </table>
+      <div class="row"><a href="#layanan" class="btn">Tutup</a></div>
+    </div>
+  </div>
+
+  <!-- ICON LUCIDE -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
